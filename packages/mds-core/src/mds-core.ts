@@ -1,1 +1,3 @@
-console.log("core")
+export const MDSCore = () => {
+    return "MDSCore"
+}

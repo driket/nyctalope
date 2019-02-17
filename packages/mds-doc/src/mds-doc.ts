@@ -1,1 +1,3 @@
-console.log("doc")
+export const MDSDoc = () => {
+    return "MDSDoc"
+}

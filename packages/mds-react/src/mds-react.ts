@@ -1,1 +1,3 @@
-console.log("react")
+export const MDSReact = () => {
+    return "MDSReact"
+}
