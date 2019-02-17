@@ -6,6 +6,11 @@
     "homepage": "",
     "license": "ISC",
     "main": "lib/mds-doc.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mandala-design-system/mds.git",
+        "directory": "packages/mds-doc"
+    },
     "typings": "lib/mds-doc.d.ts",
     "directories": {
         "lib": "lib",
@@ -19,6 +24,6 @@
     },
     "scripts": {
         "test": "echo \"Error: run tests from root\" && exit 1",
-        "tsc": "tsc"
+        "build": "tsc"
     }
 }
