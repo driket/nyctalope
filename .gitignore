@@ -4,3 +4,4 @@ npm-debug.log
 packages/*/lib
 .idea
 node_modules
+integration
