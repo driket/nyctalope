@@ -4,8 +4,8 @@
 
 ## Usage
 
-```
-const mdsDoc = require('mds-doc');
+```js
+const mdsDoc = require("mds-doc")
 
 // TODO: DEMONSTRATE API
 ```

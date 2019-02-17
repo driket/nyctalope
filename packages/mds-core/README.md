@@ -4,8 +4,8 @@
 
 ## Usage
 
-```
-const mdsCore = require('mds-core');
+```js
+const { colors, fonts, screenSizes } = require("mds-core")
 
 // TODO: DEMONSTRATE API
 ```

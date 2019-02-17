@@ -5,7 +5,7 @@
     "author": "Cedric Villa <cedric.villa@gmail.com>",
     "homepage": "",
     "license": "ISC",
-    "main": "lib/mds-core.js",
+    "main": "lib/index.js",
     "typings": "lib/mds-core.d.ts",
     "directories": {
         "lib": "lib",
