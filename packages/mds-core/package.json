@@ -11,7 +11,7 @@
         "url": "https://github.com/mandala-design-system/mds.git",
         "directory": "packages/mds-core"
     },
-    "typings": "lib/mds-core.d.ts",
+    "typings": "lib/index.d.ts",
     "directories": {
         "lib": "lib",
         "test": "__tests__"
