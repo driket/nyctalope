@@ -1,17 +1,17 @@
 {
-    "name": "@mandala-design-system/doc",
+    "name": "@mandala-design-system/react",
     "version": "0.0.7",
     "description": "> TODO: description",
     "author": "Cedric Villa <cedric.villa@gmail.com>",
     "homepage": "",
     "license": "ISC",
-    "main": "lib/mds-doc.js",
+    "main": "lib/index.js",
     "repository": {
         "type": "git",
         "url": "https://github.com/mandala-design-system/mds.git",
-        "directory": "packages/mds-doc"
+        "directory": "packages/react"
     },
-    "typings": "lib/mds-doc.d.ts",
+    "typings": "lib/index.d.ts",
     "directories": {
         "lib": "lib",
         "test": "__tests__"

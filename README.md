@@ -5,14 +5,15 @@
 
 ## Packages
 
-### mds-core
+### core
 
 Base references for:
 
 -   Color palettes (dark/light reference colors, system colors)
 -   Fonts (header fonts, text fonts, brand fonts)
+-   Screensizes (different screen sizes for various devices)
 
-### mds-react
+### react
 
 Library of React components and design tools
 
@@ -26,7 +27,7 @@ Tooling:
 -   Context (Provider/Consumer) for React components
 -   Hooks (accessibility media queries , etc.)
 
-### mds-doc
+### doc
 
 Documentation style guide generator (Gatsby)
 
@@ -34,7 +35,7 @@ Documentation style guide generator (Gatsby)
 -   Preview components in dark/light mode
 -   UI guidelines and principles
 
-### mds-starters
+### starters
 
 Basic minimal app templates
 
