@@ -21,3 +21,5 @@ export const MDSScreenSizes: MDSScreenSizesType = {
     lg: 1024, // eg. tabled landscape, large web (windowed or fullscreen)
     xl: 1366, // eg. full screen desktop or very large monitors
 }
+
+export default MDSScreenSizes
