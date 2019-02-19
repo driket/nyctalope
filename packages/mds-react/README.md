@@ -4,8 +4,8 @@
 
 ## Usage
 
-```
-const mdsReact = require('mds-react');
+```js
+const mdsReact = require("mds-react")
 
 // TODO: DEMONSTRATE API
 ```
