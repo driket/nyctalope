@@ -49,3 +49,5 @@ export const MDSColorScheme: ThemedColorSchemeType = {
         highlight: "rgb(42,125,254)",
     },
 }
+
+export default MDSColorScheme
