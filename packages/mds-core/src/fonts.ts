@@ -10,3 +10,5 @@ export const MDSFonts: MDSFontsType = {
     brand: "'Comfortaa', cursive;",
     heading: "-apple-system, 'Helvetica Neue'",
 }
+
+export default MDSFonts
