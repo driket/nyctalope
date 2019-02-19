@@ -24,7 +24,7 @@ Library of React components and design tools
 Tooling:
 
 -   Context (Provider/Consumer) for React components
--   Hooks (accessibility media queries, etc.)
+-   Hooks (accessibility media queries , etc.)
 
 ### mds-doc
 
