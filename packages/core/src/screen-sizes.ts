@@ -2,7 +2,7 @@
  * Screen sizes type
  * Reference different screen sizes corresponding to several devices
  */
-export type MDSScreenSizesType = {
+export type ScreenSizesType = {
     xs: number
     sm: number
     md: number
@@ -14,7 +14,7 @@ export type MDSScreenSizesType = {
  * Screen sizes identifiers
  * Helps to target most commonly used devices out there
  */
-export const MDSScreenSizes: MDSScreenSizesType = {
+export const ScreenSizes: ScreenSizesType = {
     xs: 0, // eg. mobile portrait
     sm: 480, // eg. mobile landscape
     md: 768, // eg. tablet portrait, small desktop (windowed)
@@ -22,4 +22,4 @@ export const MDSScreenSizes: MDSScreenSizesType = {
     xl: 1366, // eg. full screen desktop or very large monitors
 }
 
-export default MDSScreenSizes
+export default ScreenSizes

@@ -25,7 +25,7 @@ export type ColorSchemeType = {
 /**
  * Reference Color Scheme
  */
-export const MDSColorScheme: ThemedColorSchemeType = {
+export const ColorScheme: ThemedColorSchemeType = {
     light: {
         danger: "#D00020",
         success: "#5EE89A",
@@ -50,4 +50,4 @@ export const MDSColorScheme: ThemedColorSchemeType = {
     },
 }
 
-export default MDSColorScheme
+export default ColorScheme

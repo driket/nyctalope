@@ -1,5 +1,5 @@
-import MDSColorScheme from "./src/colors"
-import MDSScreenSizes from "./src/screen-sizes"
-import MDSFonts from "./src/fonts"
+import ColorScheme from "./src/colors"
+import ScreenSizes from "./src/screen-sizes"
+import Fonts from "./src/fonts"
 
-export { MDSColorScheme, MDSScreenSizes, MDSFonts }
+export { ColorScheme, ScreenSizes, Fonts }
