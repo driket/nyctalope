@@ -2,11 +2,12 @@
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
-    "prettier.tabWidth": 4,
+    "prettier.tabWidth": 2,
     "prettier.arrowParens": "always",
     "prettier.eslintIntegration": true,
     "prettier.stylelintIntegration": true,
     "prettier.tslintIntegration": true,
     "prettier.trailingComma": "all",
-    "prettier.semi": false
+    "prettier.semi": false,
+    "editor.tabSize": 2
 }
