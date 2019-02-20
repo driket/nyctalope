@@ -5,4 +5,4 @@ packages/*/lib
 .idea
 node_modules
 integration
-packages/react-old
+react-old
