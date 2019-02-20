@@ -1,28 +1,28 @@
 {
-    "name": "@mandala-design-system/core",
-    "version": "0.0.8",
-    "description": "> TODO: description",
-    "author": "Cedric Villa <cedric.villa@gmail.com>",
-    "license": "ISC",
-    "main": "lib/index.js",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/mandala-design-system/mds.git",
-        "directory": "packages/core"
-    },
-    "typings": "lib/index.d.ts",
-    "directories": {
-        "lib": "lib",
-        "test": "__tests__"
-    },
-    "files": [
-        "lib"
-    ],
-    "publishConfig": {
-        "access": "public"
-    },
-    "scripts": {
-        "test": "echo \"Error: run tests from root\" && exit 1",
-        "build": "tsc"
-    }
+  "name": "@mandala-design-system/core",
+  "version": "0.0.8",
+  "description": "> TODO: description",
+  "author": "Cedric Villa <cedric.villa@gmail.com>",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mandala-design-system/mds.git",
+    "directory": "packages/core"
+  },
+  "typings": "lib/index.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1",
+    "build": "tsc"
+  }
 }
