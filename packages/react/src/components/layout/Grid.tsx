@@ -1,6 +1,7 @@
-import React, { Component, ReactChildren } from "react"
-import { css } from "@emotion/core"
-import { ScreenSizes, ScreenSizesType } from "@mandesys/core"
+/** @jsx jsx */
+import React, { Component, ReactChildren } from 'react'
+import { jsx, css } from '@emotion/core'
+import { ScreenSizes, ScreenSizesType } from '@mandesys/core'
 
 interface GridProps {
   numCol: number
@@ -9,8 +10,8 @@ interface GridProps {
   numColMD?: number
   numColLG?: number
   numColXL?: number
-  children: ReactChildren
-  gridGap: string
+  children: any
+  gridGap?: string
 }
 
 const getNumColForScreenSizes = (props: GridProps): ScreenSizesType => {
@@ -31,7 +32,7 @@ const getNumColForScreenSizes = (props: GridProps): ScreenSizesType => {
 
 export const Grid = (props: GridProps) => {
   const numColForSizes = getNumColForScreenSizes(props)
-  const { gridGap = "10px" } = props
+  const { gridGap = '10px' } = props
   const columns = React.Children.toArray(props.children)
 
   return (
@@ -72,7 +73,7 @@ const gridStyle = (
   const sizes = Object.entries(screenSizes)
   const colForSizesStyke = sizes.map((size, index) => {
     let currentSize = screenSizes[size[0]]
-    if (size[0] == "xl") {
+    if (size[0] == 'xl') {
       return `
             @media screen and (min-width: ${currentSize}px) {
                 grid-template-columns: repeat(${numColForSizes[size[0]]}, 1fr);
