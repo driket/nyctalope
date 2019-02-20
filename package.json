@@ -7,7 +7,8 @@
     "typescript": "^3.3.3"
   },
   "scripts": {
-    "publish": "lerna run build && lerna publish"
+    "publish": "lerna run build && lerna publish",
+    "start": "cd packages/react && yarn start"
   },
   "version": "0.0.9"
 }
