@@ -1,6 +1,6 @@
 {
   "name": "@nyctalope/react",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "> TODO: description",
   "author": "Cedric Villa <cedric.villa@gmail.com>",
   "license": "ISC",
@@ -16,7 +16,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.7",
     "@emotion/styled": "^10.0.7",
-    "@nyctalope/core": "^0.0.13",
+    "@nyctalope/core": "^0.0.14",
     "@types/jest": "24.0.6",
     "@types/node": "11.9.4",
     "@types/react": "16.8.4",
