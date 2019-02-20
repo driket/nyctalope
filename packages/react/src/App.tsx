@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react"
+import logo from "./logo.svg"
+import { Grid, Col } from "./components/layout/Grid"
+import "./App.css"
 
 class App extends Component {
   render() {
@@ -19,10 +20,22 @@ class App extends Component {
           >
             Learn React
           </a>
+          <Grid numCol={6} numColXS={2} numColSM={3} numColMD={4} numColLG={5}>
+            <Col>1</Col>
+            <Col>2</Col>
+            <Col>3</Col>
+            <Col>4</Col>
+            <Col>5</Col>
+            <Col>6</Col>
+            <Col>7</Col>
+            <Col>8</Col>
+            <Col>9</Col>
+            <Col>10</Col>
+          </Grid>
         </header>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
