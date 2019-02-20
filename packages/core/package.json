@@ -7,7 +7,7 @@
   "main": "dist/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mandala-design-system/mds.git",
+    "url": "https://github.com/driket/nyctalope.git",
     "directory": "packages/core"
   },
   "typings": "dist/index.d.ts",
