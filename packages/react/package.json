@@ -3,7 +3,6 @@
     "version": "0.0.8",
     "description": "> TODO: description",
     "author": "Cedric Villa <cedric.villa@gmail.com>",
-    "homepage": "",
     "license": "ISC",
     "main": "lib/index.js",
     "repository": {
