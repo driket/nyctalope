@@ -1,5 +1,5 @@
 {
-  "name": "@mandesys/core",
+  "name": "@nyctalope/core",
   "version": "0.0.12",
   "description": "> TODO: description",
   "author": "Cedric Villa <cedric.villa@gmail.com>",
@@ -23,5 +23,6 @@
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
     "build": "rm -rf dist && tsc"
-  }
+  },
+  "gitHead": "35f981a817fa52a69341c1ea7440baadab889779"
 }
