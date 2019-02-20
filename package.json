@@ -1,13 +1,13 @@
 {
-    "name": "driket",
-    "private": false,
-    "devDependencies": {
-        "@types/node": "^11.9.4",
-        "lerna": "^3.13.0",
-        "typescript": "^3.3.3"
-    },
-    "scripts": {
-        "publish": "lerna run build && lerna publish"
-    },
-    "version": "0.0.9"
+  "name": "driket",
+  "private": false,
+  "devDependencies": {
+    "@types/node": "^11.9.4",
+    "lerna": "^3.13.0",
+    "typescript": "^3.3.3"
+  },
+  "scripts": {
+    "publish": "lerna run build && lerna publish"
+  },
+  "version": "0.0.9"
 }
