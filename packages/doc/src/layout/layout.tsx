@@ -1,4 +1,6 @@
+/** @jsx jsx */
 import React, { useContext } from 'react'
+import { jsx } from '@emotion/core'
 import { Link, StaticQuery, graphql } from 'gatsby'
 
 const Layout = (props) => {

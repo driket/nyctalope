@@ -2,12 +2,25 @@ import React from 'react'
 import Layout from '../layout/layout'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-mdx'
+import { ThemeContext, useDarkMode, Page } from '@nyctalope/react'
+import { ColorScheme, Fonts } from '@nyctalope/core'
 
 export default ({ data: { mdx } }) => {
+  const prefersColorScheme = useDarkMode() ? 'dark' : 'light'
   return (
-    <Layout>
-      <MDXRenderer>{mdx.code.body}</MDXRenderer>
-    </Layout>
+    <ThemeContext.Provider
+      value={{
+        prefersColorScheme: prefersColorScheme,
+        colors: ColorScheme[prefersColorScheme],
+        fonts: Fonts,
+      }}
+    >
+      <Layout>
+        <Page>
+          <MDXRenderer>{mdx.code.body}</MDXRenderer>
+        </Page>
+      </Layout>
+    </ThemeContext.Provider>
   )
 }
 

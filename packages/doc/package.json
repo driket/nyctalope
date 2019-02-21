@@ -23,13 +23,15 @@
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "build": "gatsby build",
+    "build": "echo yo",
     "develop": "gatsby develop"
   },
   "gitHead": "35f981a817fa52a69341c1ea7440baadab889779",
   "dependencies": {
     "@mdx-js/mdx": "^0.17.5",
     "@mdx-js/tag": "^0.17.5",
+    "@nyctalope/core": "file:../core",
+    "@nyctalope/react": "file:../react",
     "@types/jest": "^24.0.6",
     "@types/node": "^11.9.4",
     "gatsby": "^2.1.14",

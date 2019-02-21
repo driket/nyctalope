@@ -10,6 +10,14 @@
     "url": "https://github.com/driket/nyctalope.git",
     "directory": "packages/react"
   },
+  "typings": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "directories": {
+    "dist": "dist"
+  },
+  "files": [
+    "dist"
+  ],
   "publishConfig": {
     "access": "public"
   },
@@ -20,13 +28,7 @@
     "react-scripts": "2.1.5"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "build": "rm -rf dist && tsc"
   },
   "browserslist": [
     ">0.2%",

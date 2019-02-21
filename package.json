@@ -10,7 +10,7 @@
     "publish": "lerna run build && lerna publish",
     "start": "cd packages/react && yarn start",
     "develop": "cd packages/doc && yarn develop",
-    "build": "lerna run build"
+    "build": "lerna run build && lerna bootstrap"
   },
   "version": "0.0.9",
   "dependencies": {
