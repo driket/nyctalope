@@ -1,6 +1,6 @@
-# Nyctalope
+# Nyctalope.js
 
-UI Kit that handle both dark and light theming (ie: Mac OS Mojave)
+Javascript UI Kit to build apps/websites with both dark and light theming (like Mac OS Mojave)
 
 ## Packages
 
