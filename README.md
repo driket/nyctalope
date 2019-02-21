@@ -4,7 +4,11 @@ UI Kit that handle both dark and light theming (ie: Mac OS Mojave)
 
 ## Packages
 
-### @nyctalope/core
+### Core
+
+```shell
+npm install @nyctalope/core
+```
 
 Base references for:
 
@@ -12,7 +16,11 @@ Base references for:
 - Fonts (header fonts, text fonts, brand fonts)
 - Screensizes (different screen sizes for various devices)
 
-### @nyctalope/react
+### React
+
+```shell
+npm install @nyctalope/react
+```
 
 Library of React components and design tools
 
@@ -26,7 +34,11 @@ Tooling:
 - Context (Provider/Consumer) for React components
 - Hooks (accessibility media queries , etc.)
 
-### @nyctalope/doc
+### Doc (showroom)
+
+```shell
+npm install @nyctalope/doc
+```
 
 Documentation style guide generator (Gatsby)
 
@@ -34,7 +46,11 @@ Documentation style guide generator (Gatsby)
 - Preview components in dark/light mode
 - UI guidelines and principles
 
-### @nyctalope/starters
+### Project starters
+
+```shell
+/starters # from git clone
+```
 
 Basic minimal app templates
 
