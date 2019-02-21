@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React, { Component, ReactChildren } from 'react'
 import { jsx, css } from '@emotion/core'
-import { ScreenSizes, ScreenSizesType } from '@mandesys/core'
+import { ScreenSizes, ScreenSizesType } from '@nyctalope/core'
 
 interface GridProps {
   numCol: number
