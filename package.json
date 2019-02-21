@@ -11,5 +11,11 @@
     "start": "cd packages/react && yarn start",
     "build": "lerna run build"
   },
-  "version": "0.0.9"
+  "version": "0.0.9",
+  "dependencies": {
+    "@types/react": "^16.8.4",
+    "@types/react-dom": "^16.8.2",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2"
+  }
 }
