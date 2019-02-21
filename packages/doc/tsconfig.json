@@ -1,7 +1,11 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "jsx": "react"
   },
   "include": ["./src"]
 }

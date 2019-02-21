@@ -18,7 +18,6 @@ module.exports = {
     //   },
     // },
     `gatsby-mdx`,
-    `gatsby-plugin-emotion`,
     `gatsby-transformer-json`,
     `gatsby-transformer-react-docgen`,
   ],

@@ -23,7 +23,8 @@
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "build": "tsc"
+    "build": "gatsby build",
+    "develop": "gatsby develop"
   },
   "gitHead": "35f981a817fa52a69341c1ea7440baadab889779",
   "dependencies": {
@@ -31,13 +32,13 @@
     "@mdx-js/tag": "^0.17.5",
     "@types/jest": "^24.0.6",
     "@types/node": "^11.9.4",
-    "@types/react": "^16.8.4",
-    "@types/react-dom": "^16.8.2",
     "gatsby": "^2.1.14",
     "gatsby-mdx": "^0.4.0",
     "gatsby-plugin-typescript": "^2.0.8",
+    "gatsby-source-filesystem": "^2.0.21",
     "gatsby-transformer-json": "^2.1.8",
     "gatsby-transformer-react-docgen": "^3.0.5",
-    "gatsby-transformer-remark": "^2.2.5"
+    "gatsby-transformer-remark": "^2.2.5",
+    "polished": "^3.0.0"
   }
 }

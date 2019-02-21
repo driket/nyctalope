@@ -14,8 +14,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.7",
-    "@emotion/styled": "^10.0.7",
     "@nyctalope/core": "file:../core",
     "@types/jest": "24.0.6",
     "polished": "^3.0.0",

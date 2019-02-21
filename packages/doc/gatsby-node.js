@@ -34,7 +34,7 @@ exports.createPages = ({ graphql, actions }) => {
     result.data.allMdx.edges.forEach(({ node }) => {
       createPage({
         path: node.fields.slug,
-        component: path.resolve(`./src/lib/gatsby/templates/component-page.js`),
+        component: path.resolve(`./src/templates/component-page.js`),
         context: {
           // Data passed to context is available
           // in page queries as GraphQL variables.
