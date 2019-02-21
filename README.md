@@ -1,11 +1,10 @@
-# Mandala Design System
+# Nyctalope
 
-- Share a whole design system (guidelines, design principles, colors schemes, accesibility compliance, components, etc.) as single source of truth accross same brand apps/websites
-- Kickstart new projects with ready-to-use branded components, styles, guidelines, etc.
+UI Kit that handle both dark and light theming (ie: Mac OS Mojave)
 
 ## Packages
 
-### core
+### @nyctalope/core
 
 Base references for:
 
@@ -13,7 +12,7 @@ Base references for:
 - Fonts (header fonts, text fonts, brand fonts)
 - Screensizes (different screen sizes for various devices)
 
-### react
+### @nyctalope/react
 
 Library of React components and design tools
 
@@ -27,7 +26,7 @@ Tooling:
 - Context (Provider/Consumer) for React components
 - Hooks (accessibility media queries , etc.)
 
-### doc
+### @nyctalope/doc
 
 Documentation style guide generator (Gatsby)
 
@@ -35,11 +34,11 @@ Documentation style guide generator (Gatsby)
 - Preview components in dark/light mode
 - UI guidelines and principles
 
-### starters
+### @nyctalope/starters
 
 Basic minimal app templates
 
 - Ready-to-use
 - Cross platform: Mobile, Tablet, Desktop
-- Native/Standalone builder (Electron)
+- Native/Standalone builder (Electron, ReactNative, ReactXP)
 - Opt-in Typescript, prettier, etc.
