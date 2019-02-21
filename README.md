@@ -7,7 +7,7 @@ Javascript UI Kit to build apps/websites with both dark and light theming (like 
 ### Core
 
 ```shell
-npm install @nyctalope/core
+yarn add @nyctalope/core
 ```
 
 Base references for:
@@ -19,7 +19,7 @@ Base references for:
 ### React
 
 ```shell
-npm install @nyctalope/react
+yarn add @nyctalope/react
 ```
 
 Library of React components and design tools
@@ -37,7 +37,7 @@ Tooling:
 ### Doc (showroom)
 
 ```shell
-npm install @nyctalope/doc
+yarn add @nyctalope/doc
 ```
 
 Documentation style guide generator (Gatsby)
