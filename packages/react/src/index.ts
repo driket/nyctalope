@@ -10,7 +10,7 @@ export { Page } from './lib/components/document/Page'
 /**
  * Context
  */
-export { ThemeContext } from './lib/context/theme-context'
+export { ThemeContext } from './lib/context/ThemeContext'
 
 /**
  * Hooks

@@ -2,7 +2,7 @@
 import React, { useContext } from 'react'
 import { darken, transparentize } from 'polished'
 import { jsx, css, SerializedStyles } from '@emotion/core'
-import ThemeContext from '../../context/theme-context'
+import ThemeContext from '../../context/ThemeContext'
 import { ColorScheme, Fonts } from '@nyctalope/core'
 
 const CheckerBoard = (props) => {

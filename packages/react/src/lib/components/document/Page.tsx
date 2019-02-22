@@ -2,7 +2,7 @@
 import React, { useContext } from 'react'
 import { jsx, css } from '@emotion/core'
 import { transparentize } from 'polished'
-import ThemeContext from '../../context/theme-context'
+import ThemeContext from '../../context/ThemeContext'
 
 export const Page = (props) => {
   const { colors, fonts } = useContext(ThemeContext)
