@@ -11,7 +11,7 @@ const CheckerBoard = (props) => {
   const { checkerBoard = false } = props
   const backgroundColor = colors[themedBackgroundColor]
   const alternateBackgroundColor = darken(0.05, backgroundColor)
-  let backgroundStyle
+  let backgroundStyle: SerializedStyles
   if (!checkerBoard) {
     backgroundStyle = css`
       padding: 10px;
