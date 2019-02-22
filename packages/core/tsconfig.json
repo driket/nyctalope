@@ -4,7 +4,15 @@
     "lib": ["dom"],
     "declaration": true,
     "declarationDir": "./dist",
-    "composite": false
+    "composite": false,
+    "module": "commonjs",
+    "noImplicitAny": false,
+    "removeComments": true,
+    "noLib": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es6",
+    "sourceMap": true
   },
   "include": ["./src/**/*", "index.ts"]
 }

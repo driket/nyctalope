@@ -13,7 +13,8 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "outDir": "./dist",
-    "declaration": true
+    "declaration": true,
+    "noImplicitAny": false
   },
   "include": ["src/**/*", "src/index.ts"],
   "exclude": ["node_modules"]
