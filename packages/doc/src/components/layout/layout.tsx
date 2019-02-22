@@ -3,8 +3,8 @@ import React, { useContext } from 'react'
 import { jsx, css } from '@emotion/core'
 import { mix } from 'polished'
 import { Link, StaticQuery, graphql } from 'gatsby'
-import { ThemeContext } from '../../../../react/index'
-import { Page, Stack } from '../../../../react/index'
+import { ThemeContext } from '@nyctalope/react'
+import { Page, Stack } from '@nyctalope/react'
 import ComponentsMenuItems from '../ComponentsMenuItems'
 
 const Layout = (props) => {

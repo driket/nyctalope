@@ -8,7 +8,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `react-components`,
-        path: `${__dirname}/../react/src/components/`,
+        path: `${__dirname}/../react/src/lib/components/`,
       },
     },
     // {

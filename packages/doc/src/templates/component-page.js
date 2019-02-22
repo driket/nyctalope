@@ -2,8 +2,8 @@ import React from 'react'
 import Layout from '../components/layout/layout'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-mdx'
-import { ThemeContext, useDarkMode } from '../../../react/index'
-import { Page } from '../../../react/index'
+import { ThemeContext, useDarkMode } from '@nyctalope/react'
+import { Page } from '@nyctalope/react'
 import { ColorScheme, Fonts } from '@nyctalope/core'
 
 export default ({ data: { mdx } }) => {

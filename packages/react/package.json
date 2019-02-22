@@ -10,7 +10,6 @@
     "url": "https://github.com/driket/nyctalope.git",
     "directory": "packages/react"
   },
-  "typings": "dist/index.d.ts",
   "main": "dist/index.js",
   "directories": {
     "dist": "dist"
@@ -24,11 +23,13 @@
   "dependencies": {
     "@nyctalope/core": "file:../core",
     "@types/jest": "24.0.6",
-    "polished": "^3.0.0",
-    "react-scripts": "2.1.5"
+    "polished": "^3.0.0"
   },
   "scripts": {
     "build": "rm -rf dist && tsc"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
   },
   "browserslist": [
     ">0.2%",
