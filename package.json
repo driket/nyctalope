@@ -1,6 +1,6 @@
 {
   "name": "driket",
-  "private": false,
+  "private": true,
   "devDependencies": {
     "@types/node": "^11.9.4",
     "lerna": "^3.13.0",
@@ -20,5 +20,8 @@
     "@types/react-dom": "^16.8.2",
     "react": "^16.8.2",
     "react-dom": "^16.8.2"
-  }
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }

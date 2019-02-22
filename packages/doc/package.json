@@ -34,6 +34,7 @@
     "@nyctalope/react": "file:../react",
     "@types/jest": "^24.0.6",
     "@types/node": "^11.9.4",
+    "feather-icons-react": "^0.3.0",
     "gatsby": "^2.1.14",
     "gatsby-mdx": "^0.4.0",
     "gatsby-plugin-typescript": "^2.0.8",

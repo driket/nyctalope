@@ -1,0 +1,186 @@
+---
+icon: 'layout'
+---
+
+import Stack from './Stack'
+import Wrapper from '../gatsby/Wrapper'
+
+# Stack
+
+## Horizontal direction
+
+### Distribute 'start'
+
+Items are packed toward the start line.
+
+<Wrapper>
+  <Stack distribute='start'>
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+  </Stack>
+</Wrapper>
+
+### Distribute 'end'
+
+Items are packed toward to end line.
+
+<Wrapper>
+  <Stack distribute='end'>
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+  </Stack>
+</Wrapper>
+
+### Distribute 'center'
+
+Items are centered along the line.
+
+_Options_: no gap
+
+<Wrapper>
+  <Stack distribute='center'>
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+  </Stack>
+</Wrapper>
+
+### Distribute 'space between'
+
+Items are evenly distributed in the line; first item is on the start line, last item on the end line.
+
+<Wrapper>
+  <Stack distribute='space-between'>
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+  </Stack>
+</Wrapper>
+
+### Distribute 'space around'
+
+Items are evenly distributed in the line with equal space around them.
+
+<Wrapper>
+  <Stack distribute='space-around'>
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+  </Stack>
+</Wrapper>
+
+### Distribute 'space evenly'
+
+Items are distributed so that the spacing between any two adjacent alignment subjects, before the first alignment subject, and after the last alignment subject is the same.
+
+<Wrapper>
+  <Stack distribute='space-evenly'>
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+  </Stack>
+</Wrapper>
+
+## Vertical direction
+
+### Distribute 'start' - vertical
+
+<Wrapper>
+  <Stack distribute='start' direction='vertical' style={{ height: '200px' }}>
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+  </Stack>
+</Wrapper>
+
+### Distribute 'end' - vertical
+
+_Options:_ 20px gap
+
+<Wrapper>
+  <Stack distribute='end' direction='vertical' style={{ height: '200px' }}>
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+  </Stack>
+</Wrapper>
+
+### Distribute 'center' - vertical
+
+_Options:_ no gap
+
+<Wrapper>
+  <Stack distribute='center' direction='vertical' style={{ height: '200px' }}>
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+  </Stack>
+</Wrapper>
+
+### Distribute 'space between' - vertical
+
+<Wrapper>
+  <Stack
+    distribute='space-between'
+    direction='vertical'
+    style={{ height: '200px' }}
+  >
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+  </Stack>
+</Wrapper>
+
+### Distribute 'space around' - vertical
+
+<Wrapper>
+  <Stack
+    distribute='space-around'
+    direction='vertical'
+    style={{ height: '200px' }}
+  >
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+  </Stack>
+</Wrapper>
+
+### Distribute 'space evenly' - vertical
+
+<Wrapper>
+  <Stack
+    distribute='space-evenly'
+    direction='vertical'
+    style={{ height: '200px' }}
+  >
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+  </Stack>
+</Wrapper>
+
+## Gap
+
+When distribution is "start", "center" or "end", a gap can be passed as attribute.
+
+### No gap
+
+<Wrapper>
+  <Stack distribute='start' gap={0}>
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+  </Stack>
+</Wrapper>
+
+### 30px gap
+
+<Wrapper>
+  <Stack distribute='start' gap={30}>
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+  </Stack>
+</Wrapper>

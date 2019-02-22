@@ -1,5 +1,6 @@
+/** @jsx jsx */
 import React, { useContext } from 'react'
-import { css } from '@emotion/core'
+import { jsx, css } from '@emotion/core'
 import { transparentize } from 'polished'
 import ThemeContext from '../../context/theme-context'
 

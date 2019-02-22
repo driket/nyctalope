@@ -2,7 +2,7 @@
 import React, { useContext } from 'react'
 import { jsx } from '@emotion/core'
 import { graphql, Link } from 'gatsby'
-import Layout from '../layout/layout'
+import Layout from '../components/layout/layout'
 
 export default ({ data: { allMdx } }) => {
   return (

@@ -1,9 +1,18 @@
-// Components
+/**
+ * Components
+ */
+// Layouts
 export { Grid } from './src/components/layout/Grid'
+export { Stack } from './src/components/layout/Stack'
+// Documents
 export { Page } from './src/components/document/Page'
 
-// Context
+/**
+ * Context
+ */
 export { ThemeContext } from './src/context/theme-context'
 
-// Hooks
+/**
+ * Hooks
+ */
 export { useDarkMode } from './src/hooks/use-darkmode'
