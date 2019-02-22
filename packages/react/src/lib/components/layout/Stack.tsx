@@ -1,12 +1,6 @@
 /** @jsx jsx */
-import React, {
-  StatelessComponent,
-  ReactChild,
-  ReactChildren,
-  CSSProperties,
-} from 'react'
+import React from 'react'
 import { jsx, css } from '@emotion/core'
-import styled from '@emotion/styled'
 
 type StackType = {
   children?: any
@@ -21,108 +15,69 @@ type StackType = {
   direction: 'horizontal' | 'vertical'
   reverse?: boolean
   style?: any
-}
-
-type StackTypeDistributed = StackType
-type StackTypeInline = StackType & {
   gap?: number
 }
 
-function getFlexDirection(
-  props: StackTypeDistributed | StackTypeInline,
-): string {
-  let flexDirection = ''
-  if (props.direction == 'horizontal') {
-    flexDirection = 'row'
-  } else {
-    flexDirection = 'column'
-  }
-  if (props.reverse) {
-    flexDirection = flexDirection + '-reverse'
-  }
-  return flexDirection
+export const Stack = (props: StackType) => {
+  return <div css={stackStyle(props)}>{props.children}</div>
 }
 
-function getFlexDistribution(props: StackTypeDistributed | StackTypeInline) {
-  if (props.distribute == 'start' || props.distribute == 'end') {
-    return 'flex-' + props.distribute
-  } else {
-    return props.distribute
-  }
-}
+const stackStyle = (props: StackType) => {
+  const margin =
+    props.direction == 'vertical'
+      ? `margin-top:${props.gap}px`
+      : `margin-left:${props.gap}px`
+  const shouldRenderGap =
+    props.distribute == 'start' ||
+    props.distribute == 'end' ||
+    props.distribute == 'center'
+  return css`
+    /* allow padding */
+    box-sizing: border-box;
+    /* use CSS flexbox */
+    display: flex;
+    justify-content: ${getFlexDistribution(props.distribute!)};
+    align-items: ${props.alignItems};
+    flex-direction: ${getFlexDirection(props.direction, props.reverse!)};
 
-const StackInline: StatelessComponent<StackTypeInline> = (
-  props: StackTypeInline,
-) => <StyledStackInline {...props}>{props.children}</StyledStackInline>
+    /* fullSize by default */
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
 
-const StackDistributed: StatelessComponent<StackTypeDistributed> = (
-  props: StackTypeDistributed,
-) => (
-  <StyledStackDistributed {...props}>{props.children}</StyledStackDistributed>
-)
-
-export const Stack = (
-  props: { distribute: string } & (StackTypeInline | StackTypeDistributed),
-) => {
-  const { distribute, ...rest } = props
-  if (distribute == 'start' || distribute == 'end' || distribute == 'center') {
-    return (
-      <StackInline distribute={distribute} {...rest as StackTypeInline}>
-        {props.children}
-      </StackInline>
-    )
-  } else {
-    return (
-      <StackDistributed
-        distribute={distribute}
-        {...rest as StackTypeDistributed}
-      >
-        {props.children}
-      </StackDistributed>
-    )
-  }
-}
-
-const StyledStackDistributed = styled.div<StackTypeDistributed>`
-  /* allow padding */
-  box-sizing: border-box;
-
-  /* use CSS flexbox */
-  display: flex;
-  justify-content: ${(props) => getFlexDistribution(props)};
-  align-items: ${(props) => props.alignItems};
-  flex-direction: ${(props) => getFlexDirection(props)};
-
-  /* fullSize by default */
-  width: 100%;
-  height: 100%;
-  min-height: 100%;
-`
-
-const StyledStackInline = styled(StyledStackDistributed)<StackTypeInline>`
-  & > * {
-    &:not(:first-child) {
-      ${(props) =>
-        props.direction == 'vertical' ? 'margin-top' : 'margin-left'}: ${(
-        props,
-      ) => props.gap}px;
+    & > * {
+      &:not(:first-child) {
+        ${shouldRenderGap ? margin : ''};
+      }
     }
-  }
-`
+  `
+}
 
 Stack.defaultProps = {
   distribute: 'start',
   direction: 'horizontal',
   reverse: false,
   alignItems: 'center',
+  gap: 10,
 }
 
-StackInline.defaultProps = {
-  distribute: 'start',
-  direction: 'horizontal',
-  reverse: false,
-  alignItems: 'center',
-  gap: 10,
+function getFlexDirection(direction: string, reverse: boolean): string {
+  let flexDirection = ''
+  if (direction == 'horizontal') {
+    flexDirection = 'row'
+  } else {
+    flexDirection = 'column'
+  }
+  flexDirection = flexDirection + reverse ? '-reverse' : ''
+  return flexDirection
+}
+
+function getFlexDistribution(distribute: string) {
+  if (distribute == 'start' || distribute == 'end') {
+    return 'flex-' + distribute
+  } else {
+    return distribute
+  }
 }
 
 export default Stack
