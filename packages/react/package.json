@@ -23,6 +23,7 @@
   "dependencies": {
     "@nyctalope/core": "file:../core",
     "@types/jest": "24.0.6",
+    "feather-icons-react": "^0.3.0",
     "polished": "^3.0.0"
   },
   "scripts": {
