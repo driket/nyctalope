@@ -75,17 +75,17 @@ const gridStyle = (
     let currentSize = screenSizes[size[0]]
     if (size[0] == 'xl') {
       return `
-            @media screen and (min-width: ${currentSize}px) {
-                grid-template-columns: repeat(${numColForSizes[size[0]]}, 1fr);
-            }
-        `
+        @media screen and (min-width: ${currentSize}px) {
+            grid-template-columns: repeat(${numColForSizes[size[0]]}, 1fr);
+        }
+      `
     } else {
       const nextBiggerSize = screenSizes[sizes[index + 1][0]]
       return `
-            @media screen and (min-width: ${currentSize}px) and (max-width: ${nextBiggerSize}px) {
-                grid-template-columns: repeat(${numColForSizes[size[0]]}, 1fr);
-            }
-        `
+        @media screen and (min-width: ${currentSize}px) and (max-width: ${nextBiggerSize}px) {
+            grid-template-columns: repeat(${numColForSizes[size[0]]}, 1fr);
+        }
+      `
     }
   })
   return [baseGridStyle, colForSizesStyke]
