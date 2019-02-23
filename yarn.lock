@@ -1544,7 +1544,7 @@
 "@nyctalope/react@file:packages/react":
   version "0.0.16"
   dependencies:
-    "@nyctalope/core" "file:../../Library/Caches/Yarn/v4/npm-@nyctalope-react-0.0.16-56d9333d-e9ff-4e56-8475-5f9e6cf90fdd-1550842447391/node_modules/@nyctalope/core"
+    "@nyctalope/core" "file:../../Library/Caches/Yarn/v4/npm-@nyctalope-react-0.0.16-d83f7ad6-e5b3-4f15-9c70-0ad00d4d7fe4-1550922872797/node_modules/@nyctalope/core"
     "@types/jest" "24.0.6"
     polished "^3.0.0"
 
@@ -6020,6 +6020,11 @@ gatsby-mdx@^0.4.0:
     unist-util-remove "^1.0.1"
     unist-util-visit "^1.4.0"
 
+gatsby-plugin-google-fonts@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-fonts/-/gatsby-plugin-google-fonts-0.0.4.tgz#dc1402a71f27c3ae6caee10777d10adadf74bd7c"
+  integrity sha512-B9Q+dznk6UX2Fe7QyCTptiuLT+ZLtdFBs1lg5kvaVDyIlesEA2rSQqtB7IkEQflH91JPE4eAEM699JCPy7CFGg==
+
 gatsby-plugin-page-creator@^2.0.7:
   version "2.0.7"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-page-creator/-/gatsby-plugin-page-creator-2.0.7.tgz#3193d6ea2c2aeeaae2e15350fcafae1d2fffb4ce"
@@ -6094,7 +6099,7 @@ gatsby-transformer-react-docgen@^3.0.5:
     react-docgen "3.0.0-rc.2"
     react-docgen-displayname-handler " ^2.1.0"
 
-gatsby-transformer-remark@^2.2.5:
+gatsby-transformer-remark@^2.2.6:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-2.2.6.tgz#6f310ebc72e7182d6181904a7a6d7ae59995cad7"
   integrity sha512-Cb90xsOVhH8T6phxgtUFWzmaKjaKbLJe17bSg1EXQz95ro5PevTO9Z7My05nZ3rHTrS2bnJkPEJb19d7d0tOVA==

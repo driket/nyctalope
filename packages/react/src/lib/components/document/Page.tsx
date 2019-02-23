@@ -2,7 +2,7 @@
 import React, { useContext } from 'react'
 import { jsx, css } from '@emotion/core'
 import { transparentize } from 'polished'
-import ThemeContext from '../../context/ThemeContext'
+import { ThemeContext } from '@nyctalope/core'
 
 export const Page = (props) => {
   const { colors, fonts } = useContext(ThemeContext)
@@ -16,6 +16,7 @@ export const Page = (props) => {
         h1, h2 {
             border-bottom: 1px solid ${transparentize(0.9, colors.main)};
             padding-bottom: 5px;
+            color: ${transparentize(0.22, colors.main)};
         }
         a {
             color: ${colors.highlight};
@@ -23,6 +24,9 @@ export const Page = (props) => {
         }
         h2, h3, h4, h5 {
             margin-top: 30px;
+        }
+        p {
+          color: ${transparentize(0.22, colors.main)};
         }
       `}
     >

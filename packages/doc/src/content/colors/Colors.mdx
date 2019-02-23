@@ -1,0 +1,26 @@
+---
+icon: 'file'
+---
+
+import { ColorDot, ColorPalette } from '../../components/ColorSample'
+import Wrapper from '../../components/Wrapper'
+import { Grid } from '@nyctalope/react'
+
+# Color Sample
+
+<Wrapper
+  bothColorSchemes
+  colorSchemeSeparatorDirection='horizontal'
+  checkerBoard
+>
+  <Grid numCol={3} numColMD={2} numColSM={1}>
+    <ColorPalette themedColor={'main'} />
+    <ColorPalette themedColor={'highlight'} />
+    <ColorPalette themedColor={'background'} />
+    <ColorPalette themedColor={'success'} />
+    <ColorPalette themedColor={'danger'} />
+    <ColorPalette themedColor={'grey'} />
+    <ColorPalette themedColor={'lightGrey'} />
+    <ColorPalette themedColor={'lighterGrey'} />
+  </Grid>
+</Wrapper>

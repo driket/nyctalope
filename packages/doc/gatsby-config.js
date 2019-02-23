@@ -11,14 +11,22 @@ module.exports = {
         path: `${__dirname}/../react/src/lib/components/`,
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-google-fonts`,
-    //   options: {
-    //     fonts: [`Comfortaa\:400,700`],
-    //   },
-    // },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `doc-pages`,
+        path: `${__dirname}/src/content/`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Comfortaa\:400,700`],
+      },
+    },
     `gatsby-mdx`,
     `gatsby-transformer-json`,
+    `gatsby-transformer-remark`,
     `gatsby-transformer-react-docgen`,
   ],
 }

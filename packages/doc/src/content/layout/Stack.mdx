@@ -2,8 +2,9 @@
 icon: 'layout'
 ---
 
-import Stack from './Stack'
-import Wrapper from '../gatsby/Wrapper'
+import { Wrapper } from '../../components/Wrapper'
+import { Stack } from '@nyctalope/react'
+// import { Stack } from '../../../../react/src/index'
 
 # Stack
 
@@ -87,8 +88,8 @@ Items are distributed so that the spacing between any two adjacent alignment sub
 
 ### Distribute 'start' - vertical
 
-<Wrapper>
-  <Stack distribute='start' direction='vertical' style={{ height: '200px' }}>
+<Wrapper minHeight={200}>
+  <Stack distribute='start' direction='vertical'>
     <span>1</span>
     <span>2</span>
     <span>3</span>
@@ -97,10 +98,8 @@ Items are distributed so that the spacing between any two adjacent alignment sub
 
 ### Distribute 'end' - vertical
 
-_Options:_ 20px gap
-
-<Wrapper>
-  <Stack distribute='end' direction='vertical' style={{ height: '200px' }}>
+<Wrapper minHeight={200}>
+  <Stack distribute='end' direction='vertical'>
     <span>1</span>
     <span>2</span>
     <span>3</span>
@@ -109,10 +108,8 @@ _Options:_ 20px gap
 
 ### Distribute 'center' - vertical
 
-_Options:_ no gap
-
-<Wrapper>
-  <Stack distribute='center' direction='vertical' style={{ height: '200px' }}>
+<Wrapper minHeight={200}>
+  <Stack distribute='center' direction='vertical'>
     <span>1</span>
     <span>2</span>
     <span>3</span>
@@ -121,12 +118,8 @@ _Options:_ no gap
 
 ### Distribute 'space between' - vertical
 
-<Wrapper>
-  <Stack
-    distribute='space-between'
-    direction='vertical'
-    style={{ height: '200px' }}
-  >
+<Wrapper minHeight={200}>
+  <Stack distribute='space-between' direction='vertical'>
     <span>1</span>
     <span>2</span>
     <span>3</span>
@@ -135,12 +128,8 @@ _Options:_ no gap
 
 ### Distribute 'space around' - vertical
 
-<Wrapper>
-  <Stack
-    distribute='space-around'
-    direction='vertical'
-    style={{ height: '200px' }}
-  >
+<Wrapper minHeight={200}>
+  <Stack distribute='space-around' direction='vertical'>
     <span>1</span>
     <span>2</span>
     <span>3</span>
@@ -149,12 +138,8 @@ _Options:_ no gap
 
 ### Distribute 'space evenly' - vertical
 
-<Wrapper>
-  <Stack
-    distribute='space-evenly'
-    direction='vertical'
-    style={{ height: '200px' }}
-  >
+<Wrapper minHeight={200}>
+  <Stack distribute='space-evenly' direction='vertical'>
     <span>1</span>
     <span>2</span>
     <span>3</span>

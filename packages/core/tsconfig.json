@@ -1,18 +1,19 @@
 {
   "compilerOptions": {
-    "outDir": "./dist",
-    "lib": ["dom"],
-    "declaration": true,
-    "declarationDir": "./dist",
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "esnext",
+    "jsx": "react",
     "composite": false,
-    "module": "commonjs",
-    "noImplicitAny": false,
-    "removeComments": true,
-    "noLib": false,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "target": "es6",
-    "sourceMap": true
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "outDir": "./dist",
+    "declaration": true,
+    "noImplicitAny": false
   },
   "include": ["./src/**/*", "index.ts"]
 }

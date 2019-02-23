@@ -3,12 +3,12 @@ import React, { useContext } from 'react'
 import { jsx, css } from '@emotion/core'
 import { mix } from 'polished'
 import { Link, StaticQuery, graphql } from 'gatsby'
-import { ThemeContext } from '@nyctalope/react'
+import { ThemeContext } from '@nyctalope/core'
 import { Page, Stack } from '@nyctalope/react'
-import ComponentsMenuItems from '../ComponentsMenuItems'
+import ComponentsMenuItems from './ComponentsMenuItems'
 
-const Layout = (props) => {
-  const { prefersColorScheme, colors, fonts } = useContext(ThemeContext)
+export const Layout = (props) => {
+  const { colors } = useContext(ThemeContext)
   document.body.style.backgroundColor = colors.background
   return (
     <Stack
@@ -22,6 +22,49 @@ const Layout = (props) => {
       <LeftPanel {...props} />
       <MainView {...props} />
     </Stack>
+  )
+}
+
+const MainView = (props) => {
+  const { colors, fonts } = useContext(ThemeContext)
+  return (
+    <div
+      css={css`
+        margin: 0 auto;
+        width: 100%;
+        max-width: 900px;
+        padding: 30px;
+        background: ${colors.background};
+      `}
+    >
+      <Link
+        to={`/`}
+        css={css`
+          float: right;
+          margin-left: 10px;
+          color: inherit;
+          color: ${colors.highlight};
+          text-decoration: none;
+          font-family: ${fonts.main};
+        `}
+      >
+        Tests
+      </Link>
+      <Link
+        to={`/DocIndex/`}
+        css={css`
+          float: right;
+          margin-left: 10px;
+          color: inherit;
+          text-decoration: none;
+          color: ${colors.highlight};
+          font-family: ${fonts.main};
+        `}
+      >
+        Documentation
+      </Link>
+      {props.children}
+    </div>
   )
 }
 
@@ -66,49 +109,6 @@ const LeftPanel = (props) => {
           <ComponentsMenuItems components={components} />
         </Page>
       </div>
-    </div>
-  )
-}
-
-const MainView = (props) => {
-  const { prefersColorScheme, colors, fonts } = useContext(ThemeContext)
-  return (
-    <div
-      css={css`
-        margin: 0 auto;
-        width: 100%;
-        max-width: 900px;
-        padding: 30px;
-        background: ${colors.background};
-      `}
-    >
-      <Link
-        to={`/`}
-        css={css`
-          float: right;
-          margin-left: 10px;
-          color: inherit;
-          color: ${colors.highlight};
-          text-decoration: none;
-          font-family: ${fonts.main};
-        `}
-      >
-        Tests
-      </Link>
-      <Link
-        to={`/DocIndex/`}
-        css={css`
-          float: right;
-          margin-left: 10px;
-          color: inherit;
-          text-decoration: none;
-          color: ${colors.highlight};
-          font-family: ${fonts.main};
-        `}
-      >
-        Documentation
-      </Link>
-      {props.children}
     </div>
   )
 }

@@ -4,13 +4,13 @@
   "description": "> TODO: description",
   "author": "Cedric Villa <cedric.villa@gmail.com>",
   "license": "ISC",
-  "main": "dist/mds-doc.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/driket/nyctalope.git",
     "directory": "packages/doc"
   },
-  "typings": "dist/doc.d.ts",
+  "typings": "dist/index.d.ts",
   "directories": {
     "dist": "dist",
     "test": "__tests__"
@@ -23,8 +23,9 @@
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "build": "echo yo",
-    "develop": "gatsby develop"
+    "build:doc": "gatsby build",
+    "build": "rm -rf dist && tsc",
+    "develop": "rm -rf .cache && DEBUG=gatsby:query-watcher gatsby develop"
   },
   "gitHead": "35f981a817fa52a69341c1ea7440baadab889779",
   "dependencies": {
@@ -37,11 +38,12 @@
     "feather-icons-react": "^0.3.0",
     "gatsby": "^2.1.14",
     "gatsby-mdx": "^0.4.0",
+    "gatsby-plugin-google-fonts": "^0.0.4",
     "gatsby-plugin-typescript": "^2.0.8",
     "gatsby-source-filesystem": "^2.0.21",
     "gatsby-transformer-json": "^2.1.8",
     "gatsby-transformer-react-docgen": "^3.0.5",
-    "gatsby-transformer-remark": "^2.2.5",
+    "gatsby-transformer-remark": "^2.2.6",
     "polished": "^3.0.0"
   }
 }
