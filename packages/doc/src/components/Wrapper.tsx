@@ -5,7 +5,15 @@ import { jsx, css, SerializedStyles } from '@emotion/core'
 import { ThemeContext } from '@nyctalope/core'
 import { ColorScheme, Fonts } from '@nyctalope/core'
 
-export const Wrapper = (props) => {
+type WrapperProps = {
+  colorSchemeSeparatorDirection: 'vertical' | 'horizontal'
+  minHeight: string
+  bothColorSchemes: boolean
+  checkerBoard: boolean
+  children: any
+}
+
+export const Wrapper = (props: WrapperProps) => {
   const { colorSchemeSeparatorDirection = 'vertical' } = props
   const { minHeight } = props
   const currentColorScheme = useContext(ThemeContext)
@@ -14,7 +22,7 @@ export const Wrapper = (props) => {
     : [currentColorScheme.prefersColorScheme]
   const styleHeight = minHeight
     ? css`
-        min-height: ${minHeight}px;
+        min-height: ${minHeight};
       `
     : css``
   const styleWidth =
