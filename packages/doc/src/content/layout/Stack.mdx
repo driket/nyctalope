@@ -3,8 +3,7 @@ icon: 'layout'
 ---
 
 import { Wrapper } from '../../components/Wrapper'
-import { Stack } from '@nyctalope/react'
-// import { Stack } from '../../../../react/src/index'
+import { Stack, Icon } from '@nyctalope/react'
 
 # Stack
 
@@ -14,11 +13,11 @@ import { Stack } from '@nyctalope/react'
 
 Items are packed toward the start line.
 
-<Wrapper>
+<Wrapper checkerBoard>
   <Stack distribute='start'>
-    <span>1</span>
-    <span>2</span>
-    <span>3</span>
+    <Icon icon='square' />
+    <Icon icon='square' />
+    <Icon icon='square' />
   </Stack>
 </Wrapper>
 
@@ -26,11 +25,11 @@ Items are packed toward the start line.
 
 Items are packed toward to end line.
 
-<Wrapper>
+<Wrapper checkerBoard>
   <Stack distribute='end'>
-    <span>1</span>
-    <span>2</span>
-    <span>3</span>
+    <Icon icon='square' />
+    <Icon icon='square' />
+    <Icon icon='square' />
   </Stack>
 </Wrapper>
 
@@ -40,11 +39,11 @@ Items are centered along the line.
 
 _Options_: no gap
 
-<Wrapper>
+<Wrapper checkerBoard>
   <Stack distribute='center'>
-    <span>1</span>
-    <span>2</span>
-    <span>3</span>
+    <Icon icon='square' />
+    <Icon icon='square' />
+    <Icon icon='square' />
   </Stack>
 </Wrapper>
 
@@ -52,11 +51,11 @@ _Options_: no gap
 
 Items are evenly distributed in the line; first item is on the start line, last item on the end line.
 
-<Wrapper>
+<Wrapper checkerBoard>
   <Stack distribute='space-between'>
-    <span>1</span>
-    <span>2</span>
-    <span>3</span>
+    <Icon icon='square' />
+    <Icon icon='square' />
+    <Icon icon='square' />
   </Stack>
 </Wrapper>
 
@@ -64,11 +63,11 @@ Items are evenly distributed in the line; first item is on the start line, last 
 
 Items are evenly distributed in the line with equal space around them.
 
-<Wrapper>
+<Wrapper checkerBoard>
   <Stack distribute='space-around'>
-    <span>1</span>
-    <span>2</span>
-    <span>3</span>
+    <Icon icon='square' />
+    <Icon icon='square' />
+    <Icon icon='square' />
   </Stack>
 </Wrapper>
 
@@ -76,11 +75,11 @@ Items are evenly distributed in the line with equal space around them.
 
 Items are distributed so that the spacing between any two adjacent alignment subjects, before the first alignment subject, and after the last alignment subject is the same.
 
-<Wrapper>
+<Wrapper checkerBoard>
   <Stack distribute='space-evenly'>
-    <span>1</span>
-    <span>2</span>
-    <span>3</span>
+    <Icon icon='square' />
+    <Icon icon='square' />
+    <Icon icon='square' />
   </Stack>
 </Wrapper>
 
@@ -88,61 +87,61 @@ Items are distributed so that the spacing between any two adjacent alignment sub
 
 ### Distribute 'start' - vertical
 
-<Wrapper minHeight={200}>
+<Wrapper checkerBoard minHeight='200px'>
   <Stack distribute='start' direction='vertical'>
-    <span>1</span>
-    <span>2</span>
-    <span>3</span>
+    <Icon icon='square' />
+    <Icon icon='square' />
+    <Icon icon='square' />
   </Stack>
 </Wrapper>
 
 ### Distribute 'end' - vertical
 
-<Wrapper minHeight={200}>
+<Wrapper checkerBoard minHeight='200px'>
   <Stack distribute='end' direction='vertical'>
-    <span>1</span>
-    <span>2</span>
-    <span>3</span>
+    <Icon icon='square' />
+    <Icon icon='square' />
+    <Icon icon='square' />
   </Stack>
 </Wrapper>
 
 ### Distribute 'center' - vertical
 
-<Wrapper minHeight={200}>
+<Wrapper checkerBoard minHeight='200px'>
   <Stack distribute='center' direction='vertical'>
-    <span>1</span>
-    <span>2</span>
-    <span>3</span>
+    <Icon icon='square' />
+    <Icon icon='square' />
+    <Icon icon='square' />
   </Stack>
 </Wrapper>
 
 ### Distribute 'space between' - vertical
 
-<Wrapper minHeight={200}>
+<Wrapper checkerBoard minHeight='200px'>
   <Stack distribute='space-between' direction='vertical'>
-    <span>1</span>
-    <span>2</span>
-    <span>3</span>
+    <Icon icon='square' />
+    <Icon icon='square' />
+    <Icon icon='square' />
   </Stack>
 </Wrapper>
 
 ### Distribute 'space around' - vertical
 
-<Wrapper minHeight={200}>
+<Wrapper checkerBoard minHeight='200px'>
   <Stack distribute='space-around' direction='vertical'>
-    <span>1</span>
-    <span>2</span>
-    <span>3</span>
+    <Icon icon='square' />
+    <Icon icon='square' />
+    <Icon icon='square' />
   </Stack>
 </Wrapper>
 
 ### Distribute 'space evenly' - vertical
 
-<Wrapper minHeight={200}>
+<Wrapper checkerBoard minHeight='200px'>
   <Stack distribute='space-evenly' direction='vertical'>
-    <span>1</span>
-    <span>2</span>
-    <span>3</span>
+    <Icon icon='square' />
+    <Icon icon='square' />
+    <Icon icon='square' />
   </Stack>
 </Wrapper>
 
@@ -152,20 +151,20 @@ When distribution is "start", "center" or "end", a gap can be passed as attribut
 
 ### No gap
 
-<Wrapper>
+<Wrapper checkerBoard>
   <Stack distribute='start' gap={0}>
-    <span>1</span>
-    <span>2</span>
-    <span>3</span>
+    <Icon icon='square' />
+    <Icon icon='square' />
+    <Icon icon='square' />
   </Stack>
 </Wrapper>
 
 ### 30px gap
 
-<Wrapper>
+<Wrapper checkerBoard>
   <Stack distribute='start' gap={30}>
-    <span>1</span>
-    <span>2</span>
-    <span>3</span>
+    <Icon icon='square' />
+    <Icon icon='square' />
+    <Icon icon='square' />
   </Stack>
 </Wrapper>
