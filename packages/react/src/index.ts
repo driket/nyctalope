@@ -8,6 +8,7 @@ export { Stack } from './lib/components/layout/Stack'
 export { Page } from './lib/components/document/Page'
 // Elements
 export { Frame } from './lib/components/elements/Frame'
+export { Icon } from './lib/components/elements/Icon'
 /**
  * Hooks
  */
