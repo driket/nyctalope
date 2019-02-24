@@ -1,0 +1,28 @@
+---
+icon: 'minus'
+---
+
+import { Pill, PillSegment } from '@nyctalope/react'
+import { Wrapper } from '../../components/Wrapper'
+
+# Segmented Pills
+
+## Segmented pill with legend
+
+<Wrapper>
+  <Pill showLegend>
+    <PillSegment title={'Passed tests'} value={4} themedColor={'main'} />
+    <PillSegment title={'Failed tests'} value={2} themedColor={'danger'} />
+    <PillSegment title={'Pending tests'} value={1} themedColor={'lightGrey'} />
+  </Pill>
+</Wrapper>
+
+## Sucessful
+
+<Wrapper>
+  <Pill showLegend>
+    <PillSegment title={'Passed tests'} value={10} themedColor={'success'} />
+    <PillSegment title={'Failed tests'} value={0} themedColor={'danger'} />
+    <PillSegment title={'Pending tests'} value={0} themedColor={'lightGrey'} />
+  </Pill>
+</Wrapper>

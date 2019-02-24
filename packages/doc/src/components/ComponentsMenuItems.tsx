@@ -6,12 +6,14 @@ import { jsx, css } from '@emotion/core'
 
 const iconForCategory = (category) => {
   switch (category) {
-    case 'graph':
+    case 'data-viz':
       return 'pie-chart'
     case 'layout':
       return 'layout'
-    case 'colors':
-      return 'aperture'
+    case 'document':
+      return 'file'
+    case 'style':
+      return 'book'
     default:
       return 'box'
   }
