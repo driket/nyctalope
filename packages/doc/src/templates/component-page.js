@@ -5,7 +5,6 @@ import { MDXRenderer } from 'gatsby-mdx'
 import { useDarkMode } from '@nyctalope/react'
 import { Page } from '@nyctalope/react'
 import { ThemeContext, ColorScheme, Fonts } from '@nyctalope/core'
-import { Wrapper } from '../components/Wrapper'
 
 export default ({ data: { mdx } }) => {
   const prefersColorScheme = useDarkMode() ? 'dark' : 'light'

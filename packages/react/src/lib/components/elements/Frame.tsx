@@ -1,4 +1,5 @@
 /** @jsx jsx */
+/* eslint-disable import/first */
 import { Component, ReactChildren, useContext } from 'react'
 import { ThemeContext } from '@nyctalope/core'
 import { jsx, css } from '@emotion/core'

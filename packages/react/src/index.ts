@@ -1,6 +1,8 @@
 /**
  * Components
  */
+/* eslint-disable import/first */
+
 // Layouts
 export { Grid } from './lib/components/layout/Grid'
 export { Stack } from './lib/components/layout/Stack'

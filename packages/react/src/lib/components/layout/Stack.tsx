@@ -1,3 +1,4 @@
+/* eslint-disable import/first */
 /** @jsx jsx */
 import React from 'react'
 import { jsx, css } from '@emotion/core'

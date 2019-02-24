@@ -1,4 +1,5 @@
 /** @jsx jsx */
+/* eslint-disable import/first */
 import React, { Component, ReactChildren } from 'react'
 import { jsx, css } from '@emotion/core'
 import { ScreenSizes, ScreenSizesType } from '@nyctalope/core'

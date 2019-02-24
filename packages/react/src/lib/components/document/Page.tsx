@@ -1,4 +1,5 @@
 /** @jsx jsx */
+/* eslint-disable import/first */
 import React, { useContext } from 'react'
 import { jsx, css } from '@emotion/core'
 import { transparentize } from 'polished'
