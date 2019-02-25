@@ -37,6 +37,7 @@
     "@nyctalope/react": "file:../react",
     "@types/jest": "^24.0.6",
     "@types/node": "^11.9.4",
+    "axios": "^0.18.0",
     "chokidar": "^2.1.2",
     "concurrently": "^4.1.0",
     "feather-icons-react": "^0.3.0",
