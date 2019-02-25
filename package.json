@@ -8,7 +8,6 @@
   },
   "scripts": {
     "publish": "lerna run build && lerna publish",
-    "start": "cd packages/react && yarn start",
     "develop": "lerna run --parallel develop",
     "build": "lerna clean -y && lerna run build && lerna bootstrap"
   },
