@@ -3,9 +3,9 @@ import React, { useContext } from 'react'
 import { jsx, css } from '@emotion/core'
 import { mix } from 'polished'
 import { Link, StaticQuery, graphql } from 'gatsby'
-import { ThemeContext } from '@nyctalope/core'
 import { Page, Stack } from '@nyctalope/react'
 import ComponentsMenuItems from './ComponentsMenuItems'
+import { ThemeContext } from '@nyctalope/core'
 
 export const Layout = (props) => {
   const { colors } = useContext(ThemeContext)

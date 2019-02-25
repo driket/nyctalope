@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-mdx'
 import { useDarkMode } from '@nyctalope/react'
 import { Page } from '@nyctalope/react'
-import { ThemeContext, ColorScheme, Fonts } from '@nyctalope/core'
+import { ColorScheme, Fonts, ThemeContext } from '@nyctalope/core'
 
 export default ({ data: { mdx } }) => {
   const prefersColorScheme = useDarkMode() ? 'dark' : 'light'

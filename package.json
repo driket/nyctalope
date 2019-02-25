@@ -9,7 +9,7 @@
   "scripts": {
     "publish": "lerna run build && lerna publish",
     "start": "cd packages/react && yarn start",
-    "develop": "cd packages/doc && yarn develop",
+    "develop": "lerna run --parallel develop",
     "build": "lerna clean -y && lerna run build && lerna bootstrap"
   },
   "version": "0.0.9",

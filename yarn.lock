@@ -1539,13 +1539,14 @@
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
 "@nyctalope/core@file:packages/core":
-  version "0.0.16"
+  version "0.2.0"
 
 "@nyctalope/react@file:packages/react":
-  version "0.0.16"
+  version "0.2.0"
   dependencies:
-    "@nyctalope/core" "file:../../Library/Caches/Yarn/v4/npm-@nyctalope-react-0.0.16-d83f7ad6-e5b3-4f15-9c70-0ad00d4d7fe4-1550922872797/node_modules/@nyctalope/core"
+    "@nyctalope/core" "file:../../Library/Caches/Yarn/v4/npm-@nyctalope-react-0.2.0-6d418ee4-16c2-4b65-9e57-a960d1ce655b-1551080322959/node_modules/@nyctalope/core"
     "@types/jest" "24.0.6"
+    feather-icons-react "^0.3.0"
     polished "^3.0.0"
 
 "@octokit/endpoint@^3.1.1":

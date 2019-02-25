@@ -22,7 +22,8 @@
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1",
-    "build": "rm -rf dist && tsc"
+    "build": "rm -rf dist && tsc",
+    "develop": "tsc --watch --preserveWatchOutput"
   },
   "gitHead": "35f981a817fa52a69341c1ea7440baadab889779"
 }

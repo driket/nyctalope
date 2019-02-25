@@ -2,9 +2,7 @@
 import React, { useContext } from 'react'
 import { darken, transparentize } from 'polished'
 import { jsx, css, SerializedStyles } from '@emotion/core'
-import { ThemeContext } from '@nyctalope/core'
-import { ColorScheme, Fonts } from '@nyctalope/core'
-
+import { ColorScheme, Fonts, ThemeContext } from '@nyctalope/core'
 type WrapperProps = {
   colorSchemeSeparatorDirection: 'vertical' | 'horizontal'
   minHeight: string
