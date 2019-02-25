@@ -3,7 +3,22 @@ icon: 'layout'
 ---
 
 import { Wrapper } from '../../components'
-import { Grid } from '@nyctalope/react'
+import { Grid, Frame } from '@nyctalope/react'
+const Cell = (props) => (
+  <Frame
+    style={{
+      backgroundImage: `url(https://uinames.com/api/photos/female/${
+        props.children
+      }.jpg)`,
+      backgroundSize: 'cover',
+      minHeight: '200px',
+      width: '100%',
+      borderRadius: '10px',
+    }}
+  >
+    {props.children}
+  </Frame>
+)
 
 # Grid
 
@@ -11,16 +26,18 @@ import { Grid } from '@nyctalope/react'
 
 <Wrapper>
   <Grid numCol={4}>
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-    <div>5</div>
-    <div>6</div>
-    <div>7</div>
-    <div>8</div>
-    <div>9</div>
-    <div>10</div>
+    {[1, 2, 3, 4].map((n) => (
+      <Cell>{n}</Cell>
+    ))}
+    <Cell>2</Cell>
+    <Cell>3</Cell>
+    <Cell>4</Cell>
+    <Cell>5</Cell>
+    <Cell>6</Cell>
+    <Cell>7</Cell>
+    <Cell>8</Cell>
+    <Cell>9</Cell>
+    <Cell>10</Cell>
   </Grid>
 </Wrapper>
 
@@ -28,15 +45,15 @@ import { Grid } from '@nyctalope/react'
 
 <Wrapper>
   <Grid numCol={6} numColXS={2} numColSM={3} numColMD={4} numColLG={5}>
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-    <div>5</div>
-    <div>6</div>
-    <div>7</div>
-    <div>8</div>
-    <div>9</div>
-    <div>10</div>
+    <Cell>1</Cell>
+    <Cell>2</Cell>
+    <Cell>3</Cell>
+    <Cell>4</Cell>
+    <Cell>5</Cell>
+    <Cell>6</Cell>
+    <Cell>7</Cell>
+    <Cell>8</Cell>
+    <Cell>9</Cell>
+    <Cell>10</Cell>
   </Grid>
 </Wrapper>
