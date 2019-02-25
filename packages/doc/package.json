@@ -25,7 +25,9 @@
     "test": "echo \"Error: run tests from root\" && exit 1",
     "build:doc": "gatsby build",
     "build": "rm -rf dist && tsc",
-    "develop": "rm -rf .cache && DEBUG=gatsby:query-watcher gatsby develop"
+    "develop:clean": "rm -rf .cache && DEBUG=gatsby:query-watcher gatsby develop",
+    "develop": "concurrently \"yarn develop:clean\" \"yarn develop:sync-react-components\"",
+    "develop:sync-react-components": "sync-files --watch ../react/dist/src node_modules/@nyctalope/react/dist/src"
   },
   "gitHead": "35f981a817fa52a69341c1ea7440baadab889779",
   "dependencies": {
@@ -35,6 +37,8 @@
     "@nyctalope/react": "file:../react",
     "@types/jest": "^24.0.6",
     "@types/node": "^11.9.4",
+    "chokidar": "^2.1.2",
+    "concurrently": "^4.1.0",
     "feather-icons-react": "^0.3.0",
     "gatsby": "^2.1.14",
     "gatsby-mdx": "^0.4.0",
@@ -44,6 +48,7 @@
     "gatsby-transformer-json": "^2.1.8",
     "gatsby-transformer-react-docgen": "^3.0.5",
     "gatsby-transformer-remark": "^2.2.6",
-    "polished": "^3.0.0"
+    "polished": "^3.0.0",
+    "sync-files": "^1.0.3"
   }
 }
