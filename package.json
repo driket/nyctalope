@@ -7,7 +7,7 @@
     "typescript": "^3.3.3"
   },
   "scripts": {
-    "build:publish": "lerna run build && lerna publish",
+    "build:publish": "yarn build && lerna publish",
     "develop": "lerna run --parallel develop",
     "build": "lerna clean -y && lerna run build && lerna bootstrap"
   },
