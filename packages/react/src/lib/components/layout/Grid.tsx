@@ -17,7 +17,7 @@ interface GridProps {
 export const Grid = (props: GridProps) => {
   const numColForSizes = getNumColForScreenSizes(props)
   const { gridGap = '10px' } = props
-  const { style = {} } = props
+  const { propStyle = {} } = props
   const columns = React.Children.toArray(props.children)
 
   const sizes = Object.entries(ScreenSizes)
@@ -44,14 +44,14 @@ export const Grid = (props: GridProps) => {
     }
   })
 
-  const combinedStyle = {
-    ...style,
+  const style = {
     ...baseGridStyle(gridGap),
     ...colForSizesStyle,
+    ...propStyle,
   }
 
   return (
-    <div style={combinedStyle}>
+    <div style={style}>
       {columns.map((column) => {
         return column
       })}
