@@ -1,8 +1,6 @@
-/** @jsx jsx */
-/* eslint-disable import/first */
 import React, { Component, ReactChildren } from 'react'
-import { jsx, css } from '@emotion/core'
 import { ScreenSizes, ScreenSizesType } from '@nyctalope/core'
+import { useMedia } from '../../hooks/use-media'
 
 interface GridProps {
   numCol: number
@@ -12,7 +10,67 @@ interface GridProps {
   numColLG?: number
   numColXL?: number
   children: any
+  style: any
   gridGap?: string
+}
+
+export const Grid = (props: GridProps) => {
+  const numColForSizes = getNumColForScreenSizes(props)
+  const { gridGap = '10px' } = props
+  const { style = {} } = props
+  const columns = React.Children.toArray(props.children)
+
+  const sizes = Object.entries(ScreenSizes)
+  let colForSizesStyle = {}
+  sizes.map((size, index) => {
+    let currentSize = ScreenSizes[size[0]]
+    if (size[0] == 'xl') {
+      if (useMedia(`screen and (min-width: ${currentSize}px)`)) {
+        colForSizesStyle = {
+          gridTemplateColumns: `repeat(${numColForSizes[size[0]]}, 1fr)`,
+        }
+      }
+    } else {
+      const nextBiggerSize = ScreenSizes[sizes[index + 1][0]]
+      if (
+        useMedia(
+          `screen and (min-width: ${currentSize}px) and (max-width: ${nextBiggerSize}px)`,
+        )
+      ) {
+        colForSizesStyle = {
+          gridTemplateColumns: `repeat(${numColForSizes[size[0]]}, 1fr)`,
+        }
+      }
+    }
+  })
+
+  const combinedStyle = {
+    ...style,
+    ...baseGridStyle(gridGap),
+    ...colForSizesStyle,
+  }
+
+  return (
+    <div style={combinedStyle}>
+      {columns.map((column) => {
+        return column
+      })}
+    </div>
+  )
+}
+
+const baseGridStyle = (gridGap: string): any => ({
+  width: '100%',
+  display: 'grid',
+  gridGap: gridGap,
+})
+
+interface ColProps {
+  children: any
+}
+
+export const Col = (props: ColProps) => {
+  return <div>{props.children}</div>
 }
 
 const getNumColForScreenSizes = (props: GridProps): ScreenSizesType => {
@@ -29,67 +87,6 @@ const getNumColForScreenSizes = (props: GridProps): ScreenSizesType => {
     lg: numColLG,
     xl: numColXL,
   }
-}
-
-export const Grid = (props: GridProps) => {
-  const numColForSizes = getNumColForScreenSizes(props)
-  const { gridGap = '10px' } = props
-  const columns = React.Children.toArray(props.children)
-
-  return (
-    <div css={gridStyle(numColForSizes, ScreenSizes, gridGap)}>
-      {columns.map((column) => {
-        return column
-      })}
-    </div>
-  )
-}
-
-interface ColProps {
-  children: any
-}
-
-export const Col = (props: ColProps) => {
-  return (
-    <div
-      css={css`
-        /* background: red; */
-      `}
-    >
-      {props.children}
-    </div>
-  )
-}
-
-const gridStyle = (
-  numColForSizes: ScreenSizesType,
-  screenSizes: ScreenSizesType,
-  gridGap: string,
-) => {
-  const baseGridStyle = css`
-    width: 100%;
-    display: grid;
-    grid-gap: ${gridGap};
-  `
-  const sizes = Object.entries(screenSizes)
-  const colForSizesStyke = sizes.map((size, index) => {
-    let currentSize = screenSizes[size[0]]
-    if (size[0] == 'xl') {
-      return `
-        @media screen and (min-width: ${currentSize}px) {
-            grid-template-columns: repeat(${numColForSizes[size[0]]}, 1fr);
-        }
-      `
-    } else {
-      const nextBiggerSize = screenSizes[sizes[index + 1][0]]
-      return `
-        @media screen and (min-width: ${currentSize}px) and (max-width: ${nextBiggerSize}px) {
-            grid-template-columns: repeat(${numColForSizes[size[0]]}, 1fr);
-        }
-      `
-    }
-  })
-  return [baseGridStyle, colForSizesStyke]
 }
 
 export default Grid
