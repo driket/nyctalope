@@ -33,7 +33,7 @@ export type SystemColorsType = {
  */
 export const ColorScheme: ThemedColorSchemeType = {
   light: {
-    danger: '#D00020',
+    danger: '#DE4D45',
     success: '#5EE89A',
     main: 'black',
     inverted: 'white',
