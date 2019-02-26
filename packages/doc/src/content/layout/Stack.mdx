@@ -2,8 +2,18 @@
 icon: 'layout'
 ---
 
-import { Wrapper } from '../../components'
+import { Wrapper, PeoplePhoto } from '../../components'
 import { Stack, Icon } from '@nyctalope/react'
+const DemoComponent = () => (
+  <PeoplePhoto
+    style={{
+      width: '30px',
+      minHeight: '30px',
+      borderRadius: '30px',
+      boxShadow: '0px 1px 1px rgba(0,0,0,0.4)',
+    }}
+  />
+)
 
 # Stack
 
@@ -15,9 +25,11 @@ Items are packed toward the start line.
 
 <Wrapper checkerBoard>
   <Stack distribute='start'>
-    <Icon icon='square' />
-    <Icon icon='square' />
-    <Icon icon='square' />
+    {Array(3)
+      .fill('')
+      .map((person) => (
+        <DemoComponent />
+      ))}
   </Stack>
 </Wrapper>
 
@@ -27,9 +39,11 @@ Items are packed toward to end line.
 
 <Wrapper checkerBoard>
   <Stack distribute='end'>
-    <Icon icon='square' />
-    <Icon icon='square' />
-    <Icon icon='square' />
+    {Array(3)
+      .fill('')
+      .map((person) => (
+        <DemoComponent />
+      ))}
   </Stack>
 </Wrapper>
 
@@ -41,9 +55,11 @@ _Options_: no gap
 
 <Wrapper checkerBoard>
   <Stack distribute='center'>
-    <Icon icon='square' />
-    <Icon icon='square' />
-    <Icon icon='square' />
+    {Array(3)
+      .fill('')
+      .map((person) => (
+        <DemoComponent />
+      ))}
   </Stack>
 </Wrapper>
 
@@ -53,9 +69,11 @@ Items are evenly distributed in the line; first item is on the start line, last 
 
 <Wrapper checkerBoard>
   <Stack distribute='space-between'>
-    <Icon icon='square' />
-    <Icon icon='square' />
-    <Icon icon='square' />
+    {Array(3)
+      .fill('')
+      .map((person) => (
+        <DemoComponent />
+      ))}
   </Stack>
 </Wrapper>
 
@@ -65,9 +83,11 @@ Items are evenly distributed in the line with equal space around them.
 
 <Wrapper checkerBoard>
   <Stack distribute='space-around'>
-    <Icon icon='square' />
-    <Icon icon='square' />
-    <Icon icon='square' />
+    {Array(3)
+      .fill('')
+      .map((person) => (
+        <DemoComponent />
+      ))}
   </Stack>
 </Wrapper>
 
@@ -77,9 +97,11 @@ Items are distributed so that the spacing between any two adjacent alignment sub
 
 <Wrapper checkerBoard>
   <Stack distribute='space-evenly'>
-    <Icon icon='square' />
-    <Icon icon='square' />
-    <Icon icon='square' />
+    {Array(3)
+      .fill('')
+      .map((person) => (
+        <DemoComponent />
+      ))}
   </Stack>
 </Wrapper>
 
@@ -89,9 +111,11 @@ Items are distributed so that the spacing between any two adjacent alignment sub
 
 <Wrapper checkerBoard minHeight='200px'>
   <Stack distribute='start' direction='vertical'>
-    <Icon icon='square' />
-    <Icon icon='square' />
-    <Icon icon='square' />
+    {Array(3)
+      .fill('')
+      .map((person) => (
+        <DemoComponent />
+      ))}
   </Stack>
 </Wrapper>
 
@@ -99,9 +123,11 @@ Items are distributed so that the spacing between any two adjacent alignment sub
 
 <Wrapper checkerBoard minHeight='200px'>
   <Stack distribute='end' direction='vertical'>
-    <Icon icon='square' />
-    <Icon icon='square' />
-    <Icon icon='square' />
+    {Array(3)
+      .fill('')
+      .map((person) => (
+        <DemoComponent />
+      ))}
   </Stack>
 </Wrapper>
 
@@ -109,9 +135,11 @@ Items are distributed so that the spacing between any two adjacent alignment sub
 
 <Wrapper checkerBoard minHeight='200px'>
   <Stack distribute='center' direction='vertical'>
-    <Icon icon='square' />
-    <Icon icon='square' />
-    <Icon icon='square' />
+    {Array(3)
+      .fill('')
+      .map((person) => (
+        <DemoComponent />
+      ))}
   </Stack>
 </Wrapper>
 
@@ -119,9 +147,11 @@ Items are distributed so that the spacing between any two adjacent alignment sub
 
 <Wrapper checkerBoard minHeight='200px'>
   <Stack distribute='space-between' direction='vertical'>
-    <Icon icon='square' />
-    <Icon icon='square' />
-    <Icon icon='square' />
+    {Array(3)
+      .fill('')
+      .map((person) => (
+        <DemoComponent />
+      ))}
   </Stack>
 </Wrapper>
 
@@ -129,9 +159,11 @@ Items are distributed so that the spacing between any two adjacent alignment sub
 
 <Wrapper checkerBoard minHeight='200px'>
   <Stack distribute='space-around' direction='vertical'>
-    <Icon icon='square' />
-    <Icon icon='square' />
-    <Icon icon='square' />
+    {Array(3)
+      .fill('')
+      .map((person) => (
+        <DemoComponent />
+      ))}
   </Stack>
 </Wrapper>
 
@@ -139,9 +171,11 @@ Items are distributed so that the spacing between any two adjacent alignment sub
 
 <Wrapper checkerBoard minHeight='200px'>
   <Stack distribute='space-evenly' direction='vertical'>
-    <Icon icon='square' />
-    <Icon icon='square' />
-    <Icon icon='square' />
+    {Array(3)
+      .fill('')
+      .map((person) => (
+        <DemoComponent />
+      ))}
   </Stack>
 </Wrapper>
 
@@ -153,9 +187,11 @@ When distribution is "start", "center" or "end", a gap can be passed as attribut
 
 <Wrapper checkerBoard>
   <Stack distribute='start' gap={0}>
-    <Icon icon='square' />
-    <Icon icon='square' />
-    <Icon icon='square' />
+    {Array(3)
+      .fill('')
+      .map((person) => (
+        <DemoComponent />
+      ))}
   </Stack>
 </Wrapper>
 
@@ -163,8 +199,10 @@ When distribution is "start", "center" or "end", a gap can be passed as attribut
 
 <Wrapper checkerBoard>
   <Stack distribute='start' gap={30}>
-    <Icon icon='square' />
-    <Icon icon='square' />
-    <Icon icon='square' />
+    {Array(3)
+      .fill('')
+      .map((person) => (
+        <DemoComponent />
+      ))}
   </Stack>
 </Wrapper>
