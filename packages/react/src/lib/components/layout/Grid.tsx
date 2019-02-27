@@ -2,18 +2,38 @@ import React, { Component, ReactChildren } from 'react'
 import { ScreenSizes, ScreenSizesType } from '@nyctalope/core'
 import { useMedia } from '../../hooks/use-media'
 
+/**
+ * Grid properties
+ */
 interface GridProps {
+  /* Number of columns */
   numCol: number
+  /* Number of columns displayed on a XS sized screen.*/
   numColXS?: number
+  /* Number of columns displayed on a SM sized screen.
+  Will be used for smaller screen sizes if they are not set */
   numColSM?: number
+  /* Number of columns displayed on a MD sized screen.
+  Will be used for smaller screen sizes if they arenot set */
   numColMD?: number
+  /* Number of columns displayed on a LG sized screen.
+  Will be used for smaller screen sizes if they arenot set */
   numColLG?: number
+  /* Number of columns displayed on a XL sized screen.
+  Will be used for smaller screen sizes if they arenot set */
   numColXL?: number
+  /* Grid cells as children */
   children: any
+  /* Custom style */
   style: any
+  /* Gap between columns */
   gridGap?: string
 }
 
+/**
+ * Grid component
+ * @param props GridProps
+ */
 export const Grid = (props: GridProps) => {
   const numColForSizes = getNumColForScreenSizes(props)
   const { gridGap = '10px' } = props
@@ -44,6 +64,9 @@ export const Grid = (props: GridProps) => {
     }
   })
 
+  /**
+   * Construct grid style and override with custom style
+   */
   const style = {
     ...baseGridStyle(gridGap),
     ...colForSizesStyle,
@@ -73,6 +96,11 @@ export const Col = (props: ColProps) => {
   return <div>{props.children}</div>
 }
 
+/**
+ * Compute default values for columns
+ * If a column prop for size is not set, inherit from bigger size
+ * @param props
+ */
 const getNumColForScreenSizes = (props: GridProps): ScreenSizesType => {
   const { numCol = 4 } = props
   const { numColXL = numCol } = props
