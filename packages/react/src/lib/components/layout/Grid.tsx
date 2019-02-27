@@ -17,7 +17,7 @@ interface GridProps {
 export const Grid = (props: GridProps) => {
   const numColForSizes = getNumColForScreenSizes(props)
   const { gridGap = '10px' } = props
-  const { propStyle = {} } = props
+  const propStyle = props.style || {}
   const columns = React.Children.toArray(props.children)
 
   const sizes = Object.entries(ScreenSizes)
