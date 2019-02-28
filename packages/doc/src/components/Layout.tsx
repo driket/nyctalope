@@ -74,7 +74,7 @@ const LeftPanel = (props) => {
   return (
     <div
       css={css`
-        min-width: 260px;
+        min-width: 200px;
         min-height: 100%;
         display: flex;
         margin: 0;
@@ -86,8 +86,12 @@ const LeftPanel = (props) => {
           position: fixed;
           background-color: ${mix(0.05, colors.main, colors.background)};
           min-height: 100%;
-          min-width: 260px;
-          border-right: 1px solid ${mix(0.1, colors.main, colors.background)};
+          min-width: 200px;
+          /* border-right: 1px solid ${mix(
+            0.1,
+            colors.main,
+            colors.background,
+          )}; */
         `}
       >
         <Link to={`/`}>
