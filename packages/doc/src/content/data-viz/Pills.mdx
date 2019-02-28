@@ -13,7 +13,11 @@ import { Pill, PillSegment } from '@nyctalope/react'
   <Pill showLegend>
     <PillSegment title={'Passed tests'} value={4} themedColor={'main'} />
     <PillSegment title={'Failed tests'} value={2} themedColor={'danger'} />
-    <PillSegment title={'Pending tests'} value={1} themedColor={'lightGrey'} />
+    <PillSegment
+      title={'Pending tests'}
+      value={1}
+      themedColor={'lighterGrey'}
+    />
   </Pill>
 </Wrapper>
 
@@ -23,6 +27,10 @@ import { Pill, PillSegment } from '@nyctalope/react'
   <Pill showLegend>
     <PillSegment title={'Passed tests'} value={10} themedColor={'success'} />
     <PillSegment title={'Failed tests'} value={0} themedColor={'danger'} />
-    <PillSegment title={'Pending tests'} value={0} themedColor={'lightGrey'} />
+    <PillSegment
+      title={'Pending tests'}
+      value={0}
+      themedColor={'lighterGrey'}
+    />
   </Pill>
 </Wrapper>
