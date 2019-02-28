@@ -52,7 +52,7 @@ const MenuCategory = (props) => {
       <li
         key={name}
         css={css`
-          min-height: 30px;
+          min-height: 26px;
           list-style: none;
           padding-left: 0px;
           display: flex;
@@ -62,12 +62,14 @@ const MenuCategory = (props) => {
           clear: both;
           text-transform: capitalize;
           margin-left: 0px;
+          font-size: 14px;
         `}
       >
         <FeatherIcon
           icon={icon}
           css={css`
             margin-right: 10px;
+            height: 14px;
           `}
         />
         {name}
@@ -84,10 +86,11 @@ const MenuCategory = (props) => {
               css={css`
                 list-style: none;
                 margin: 0;
-                min-height: 30px;
+                min-height: 16x;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
+                font-size: 14px;
                 /* width: 200px; */
                 clear: both;
               `}
