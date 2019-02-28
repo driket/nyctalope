@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Nyctalope Design System`,
+    title: `Nyctalope`,
   },
   plugins: [
     `gatsby-plugin-typescript`,
