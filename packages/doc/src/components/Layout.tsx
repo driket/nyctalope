@@ -3,7 +3,7 @@ import React, { useContext } from 'react'
 import { jsx, css } from '@emotion/core'
 import { mix } from 'polished'
 import { Link, StaticQuery, graphql } from 'gatsby'
-import { Page, Stack } from '@nyctalope/react'
+import { Page, Stack, Icon } from '@nyctalope/react'
 import ComponentsMenuItems from './ComponentsMenuItems'
 import { ThemeContext } from '@nyctalope/core'
 
@@ -71,6 +71,13 @@ const MainView = (props) => {
 const LeftPanel = (props) => {
   const components = props.data.allMdx.edges
   const { prefersColorScheme, colors, fonts } = useContext(ThemeContext)
+  const iconStyle = {
+    width: '16px',
+    height: '16px',
+    paddingRight: '5px',
+    position: 'relative',
+    top: '1px',
+  }
   return (
     <div
       css={css`
@@ -106,12 +113,11 @@ const LeftPanel = (props) => {
               margin-left: 20px;
             `}
           >
+            <Icon icon='moon' style={iconStyle} />
             {props.data.site.siteMetadata.title}
           </h3>
         </Link>
-        <Page>
-          <ComponentsMenuItems components={components} />
-        </Page>
+        <ComponentsMenuItems components={components} />
       </div>
     </div>
   )

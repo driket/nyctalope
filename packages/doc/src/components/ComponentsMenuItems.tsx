@@ -3,6 +3,119 @@ import FeatherIcon from 'feather-icons-react'
 import React, { useContext } from 'react'
 import { Link } from 'gatsby'
 import { jsx, css } from '@emotion/core'
+import { ThemeContext } from '@nyctalope/core'
+import { CSSProperties } from '@emotion/serialize'
+import { PropertiesFallback } from 'csstype'
+
+export const ComponentsMenuItems = (props) => {
+  const { colors, fonts } = useContext(ThemeContext)
+  const { components } = props
+  const categorizedComponents = categorizeComponents(components)
+  console.log(categorizedComponents)
+  const topLevelStyle = {
+    marginLeft: '26px',
+    fontSize: '12px',
+    color: colors.grey,
+    letterSpacing: '0.15em',
+    fontFamily: fonts.heading,
+  }
+  const baseMenuStyle = {
+    fontFamily: fonts.main,
+  }
+  const menuStyle = {
+    ...props.style,
+    ...baseMenuStyle,
+  }
+  return (
+    <div style={menuStyle}>
+      <h3 style={topLevelStyle}>COMPONENTS</h3>
+      {categorizedComponents.map((category) => {
+        return (
+          <ul
+            css={css`
+              font-family: ${fonts.heading};
+              padding-left: 0px;
+            `}
+          >
+            <MenuCategory
+              icon={category.icon}
+              name={category.name}
+              components={category.components}
+            />
+          </ul>
+        )
+      })}
+    </div>
+  )
+}
+
+const MenuCategory = (props) => {
+  const { colors, fonts } = useContext(ThemeContext)
+  const icon = props.icon || 'cube'
+  const name = props.name || ''
+  const components = props.components || []
+  return (
+    <ul style={{ paddingLeft: '20px' }}>
+      <li
+        key={name}
+        css={css`
+          font-family: ${fonts.main};
+          min-height: 26px;
+          list-style: none;
+          padding-left: 0px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          /* width: 150px; */
+          clear: both;
+          text-transform: capitalize;
+          margin-left: 0px;
+          font-size: 14px;
+        `}
+      >
+        <FeatherIcon
+          icon={icon}
+          css={css`
+            margin-right: 2px;
+            height: 14px;
+          `}
+        />
+        {name}
+      </li>
+      <ul
+        css={css`
+          padding-left: 26px;
+        `}
+      >
+        {components.map((component) => {
+          return (
+            <li
+              key={component.name}
+              css={css`
+                list-style: none;
+                margin: 0;
+                min-height: 16x;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                font-size: 13px;
+                /* width: 200px; */
+                clear: both;
+              `}
+            >
+              <Link
+                style={{ color: colors.grey, textDecoration: 'none' }}
+                to={component.slug}
+              >
+                {component.name}
+              </Link>
+            </li>
+          )
+        })}
+      </ul>
+    </ul>
+  )
+}
 
 const iconForCategory = (category) => {
   switch (category) {
@@ -41,88 +154,6 @@ const categorizeComponents = (components) => {
       })
     return componentsTree
   }, [])
-}
-
-const MenuCategory = (props) => {
-  const icon = props.icon || 'cube'
-  const name = props.name || ''
-  const components = props.components || []
-  return (
-    <ul style={{ paddingLeft: '20px' }}>
-      <li
-        key={name}
-        css={css`
-          min-height: 26px;
-          list-style: none;
-          padding-left: 0px;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          /* width: 150px; */
-          clear: both;
-          text-transform: capitalize;
-          margin-left: 0px;
-          font-size: 14px;
-        `}
-      >
-        <FeatherIcon
-          icon={icon}
-          css={css`
-            margin-right: 10px;
-            height: 14px;
-          `}
-        />
-        {name}
-      </li>
-      <ul
-        css={css`
-          padding-left: 34px;
-        `}
-      >
-        {components.map((component) => {
-          return (
-            <li
-              key={component.name}
-              css={css`
-                list-style: none;
-                margin: 0;
-                min-height: 16x;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                font-size: 14px;
-                /* width: 200px; */
-                clear: both;
-              `}
-            >
-              <Link to={component.slug}>{component.name}</Link>
-            </li>
-          )
-        })}
-      </ul>
-    </ul>
-  )
-}
-
-export const ComponentsMenuItems = (props) => {
-  const { components } = props
-  const categorizedComponents = categorizeComponents(components)
-  console.log(categorizedComponents)
-  return categorizedComponents.map((category) => {
-    return (
-      <ul
-        css={css`
-          padding-left: 0px;
-        `}
-      >
-        <MenuCategory
-          icon={category.icon}
-          name={category.name}
-          components={category.components}
-        />
-      </ul>
-    )
-  })
 }
 
 export default ComponentsMenuItems
