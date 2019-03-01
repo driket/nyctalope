@@ -1,46 +1,75 @@
-/** @jsx jsx */
-/* eslint-disable import/first */
-import React, { useContext } from 'react'
-import { css, jsx } from '@emotion/core'
+import React, {
+  useContext,
+  CSSProperties,
+  ReactChildren,
+  ReactElement,
+  SFC,
+} from 'react'
 import { ThemeContext } from '@nyctalope/core'
+import {
+  legendSegmentStyle,
+  pillStyle,
+  legendStyle,
+  pillSegmentStyle,
+} from './Pill.style'
 
-type PillSegmentType = {
+type PillProps = {
   value: number
   title: string
-  color: string
+  themedcolor: string
+  showLegend: boolean
   size: string
+  style: any
+  children: any
 }
 
-type PillType = {
-  value: number
-  title: string
-  color: string
-  size: string
-}
-
-export const PillSegment = (props) => {
+export const Pill = (props: PillProps) => {
   const { colors } = useContext(ThemeContext)
-  const { value } = props || 0
-  const { title } = props || ''
-  const { themedColor } = props || 'main'
-  const { size } = props || '33.33%'
-  const processedColor = colors[themedColor]
+  const totalSegmentsValue = sumSegmentsValue(props.children)
   return (
-    <div
-      css={css`
-        display: block;
-        width: ${size};
-        background-color: ${processedColor};
-        height: 30px;
-      `}
-      {...props}
-    />
+    <div {...props} style={{ width: '100%' }}>
+      <div style={pillStyle} {...props}>
+        {React.Children.map(props.children, (segment) => (
+          <PillSegment
+            {...segment.props}
+            size={(segment.props.value / totalSegmentsValue) * 100 + '%'}
+          />
+        ))}
+      </div>
+      {props.showLegend && (
+        <div style={legendStyle(colors.grey)}>
+          {React.Children.map(props.children, (segment) => (
+            <div style={{ display: 'flex' }}>
+              <div
+                style={legendSegmentStyle(colors[segment.props.themedColor])}
+              />
+              {segment.props.title}: {segment.props.value}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
   )
 }
 
-export const Pill = (props) => {
+type PillSegmentProps = {
+  value: number
+  title: string
+  themedColor: string
+  size: string
+  style: any
+}
+
+export const PillSegment: SFC<PillSegmentProps> = (props: PillSegmentProps) => {
   const { colors } = useContext(ThemeContext)
-  const totalSegmentsValue = React.Children.toArray(props.children).reduce(
+  const { themedColor } = props || 'main'
+  const { size } = props || '33.33%'
+  const processedColor = colors[themedColor]
+  return <div style={pillSegmentStyle(size, processedColor)} {...props} />
+}
+
+const sumSegmentsValue = (segments): number => {
+  return React.Children.toArray(segments).reduce(
     (previousValue, currentValue) => {
       if (typeof currentValue === 'object') {
         return previousValue + currentValue.props.value
@@ -49,82 +78,6 @@ export const Pill = (props) => {
       }
     },
     0,
-  ) as number
-  // const totalSegmentsValue = 10;
-  console.log('props:', props)
-  console.log('totalSegmentsValue', totalSegmentsValue)
-  const sizedSegment = React.Children.map(props.children, (child) => {
-    return {
-      ...child,
-      props: {
-        ...child.props,
-        size: (child.props.value / totalSegmentsValue) * 100 + '%',
-      },
-    }
-    // return (
-    //     <div>{child}</div>
-    // )
-  })
-  const legend = props.showLegend && (
-    <div
-      css={css`
-        width: 100%;
-        display: flex;
-        justify-content: space-evenly;
-        margin-top: 20px;
-        color: ${colors.grey};
-        font-size: 12px;
-      `}
-    >
-      {sizedSegment.map((segment) => {
-        return (
-          <div
-            css={css`
-              display: flex;
-            `}
-          >
-            <div
-              css={css`
-                background-color: ${colors[segment.props.themedColor]};
-                width: 8px;
-                height: 8px;
-                border-radius: 8px;
-                margin-top: 6px;
-                margin-right: 6px;
-              `}
-            />
-            {segment.props.title}: {segment.props.value}
-          </div>
-        )
-      })}
-    </div>
-  )
-  return (
-    <div
-      {...props}
-      css={css`
-        width: 100%;
-      `}
-    >
-      <div
-        css={css`
-          /* background-color: blue; */
-          height: 30px;
-          border-radius: 150px;
-          padding: 0px;
-          overflow: hidden;
-          width: 100%;
-          display: flex;
-        `}
-        {...props}
-      >
-        {sizedSegment.map((segment) => {
-          console.log(segment)
-          return segment
-        })}
-      </div>
-      {legend}
-    </div>
   )
 }
 
