@@ -97,16 +97,6 @@ const baseButtonStyle = (
     padding: '4px 12px',
 
     border: 'none',
-
-    // /* icon */
-    // & .feather {
-    //     position: relative;
-    //     display: block;
-    // }
-    // & span {
-    //     position: relative;
-    //     display: block;
-    // }
   }
 }
 
@@ -137,12 +127,10 @@ const buttonStyleTypes = (
       color: 'white',
     },
     secondary: {
-      backgroundColor: 'transparent',
-      color: isActive
-        ? mix(0.65, colors.main, colors.background)
-        : isHovered
-        ? mix(0.85, colors.main, colors.background)
-        : colors.main,
+      color: colors.main,
+      backgroundColor: isActive
+        ? transparentize(0.95, colors.main)
+        : 'transparent',
       boxShadow: `inset 0px 0px 0px 1px ${transparentize(0.5, colors.main)}`,
     },
     danger: {
@@ -153,11 +141,7 @@ const buttonStyleTypes = (
     },
     ghost: {
       backgroundColor: 'transparent',
-      color: isActive
-        ? mix(0.65, colors.main, colors.background)
-        : isHovered
-        ? mix(0.85, colors.main, colors.background)
-        : colors.main,
+      color: isActive ? colors.highlight : colors.main,
       boxShadow: 'none',
     },
   }
