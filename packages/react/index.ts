@@ -9,6 +9,7 @@ export { Stack } from './src/lib/components/layout/Stack'
 // Documents
 export { Page } from './src/lib/components/document/Page'
 // Elements
+export { Button } from './src/lib/components/elements/Button'
 export { Frame } from './src/lib/components/elements/Frame'
 export { Icon } from './src/lib/components/elements/Icon'
 // Data Viz

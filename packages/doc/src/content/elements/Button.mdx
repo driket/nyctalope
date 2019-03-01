@@ -1,0 +1,16 @@
+---
+icon: 'layout'
+---
+
+import { Wrapper } from '../../components'
+import { Button, Stack } from '@nyctalope/react'
+
+# Button
+
+<Wrapper>
+  <Stack distribute='start'>
+    {['default', 'primary', 'secondary', 'ghost', 'danger'].map((type) => (
+      <Button>{type.charAt(0).toUpperCase() + type.slice(1)}</Button>
+    ))}
+  </Stack>
+</Wrapper>
