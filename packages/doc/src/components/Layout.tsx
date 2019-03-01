@@ -48,7 +48,7 @@ const MainView = (props) => {
           font-family: ${fonts.main};
         `}
       >
-        Tests
+        {/* Tests */}
       </Link>
       <Link
         to={`/DocIndex/`}
@@ -61,7 +61,7 @@ const MainView = (props) => {
           font-family: ${fonts.main};
         `}
       >
-        Documentation
+        {/* Documentation */}
       </Link>
       {props.children}
     </div>
