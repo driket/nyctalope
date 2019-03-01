@@ -5,9 +5,11 @@ icon: 'layout'
 import { Wrapper } from '../../components'
 import { Button, Stack } from '@nyctalope/react'
 
-# Button
+# Buttons
 
-<Wrapper bothColorSchemes checkerBoard>
+## Types
+
+<Wrapper checkerBoard>
   <Stack distribute='start'>
     {['default', 'primary', 'secondary', 'ghost', 'danger'].map((type) => (
       <Button type={type}>
@@ -17,10 +19,26 @@ import { Button, Stack } from '@nyctalope/react'
   </Stack>
 </Wrapper>
 
-<Wrapper bothColorSchemes checkerBoard>
+## Sizes
+
+<Wrapper checkerBoard>
   <Stack distribute='start'>
     {['xs', 'sm', 'md', 'lg'].map((size) => (
       <Button size={size}>Button {size}</Button>
+    ))}
+  </Stack>
+</Wrapper>
+
+## With icons
+
+### Vertical button
+
+<Wrapper checkerBoard>
+  <Stack distribute='start'>
+    {['xs', 'sm', 'md', 'lg'].map((size) => (
+      <Button size={size} icon='x-circle'>
+        Button {size}
+      </Button>
     ))}
   </Stack>
 </Wrapper>
