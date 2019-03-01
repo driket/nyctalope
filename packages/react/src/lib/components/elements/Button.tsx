@@ -39,8 +39,9 @@ export const Button: SFC<ButtonProps> = (props: ButtonProps) => {
   console.log('type: ', type)
   return (
     <button
-      onMouseDown={() => setActive(true)}
-      onMouseUp={() => setActive(false)}
+      onMouseDownCapture={() => setActive(true)}
+      onMouseUpCapture={() => setActive(false)}
+      onMouseLeave={() => setActive(false)}
       ref={hoverRef}
       style={combinedStyle}
     >
@@ -112,16 +113,12 @@ const buttonStyleTypes = (
     default: {
       backgroundColor: isActive
         ? mix(0.85, colors.lighterGrey, colors.main)
-        : isHovered
-        ? mix(0.95, colors.lighterGrey, colors.main)
         : colors.lighterGrey,
       color: colors.main,
     },
     primary: {
       backgroundColor: isActive
         ? mix(0.85, colors.highlight, 'white')
-        : isHovered
-        ? mix(0.95, colors.highlight, 'white')
         : colors.highlight,
       color: 'white',
     },
@@ -137,8 +134,6 @@ const buttonStyleTypes = (
     danger: {
       backgroundColor: isActive
         ? mix(0.85, colors.danger, 'white')
-        : isHovered
-        ? mix(0.95, colors.danger, 'white')
         : colors.danger,
       color: 'white',
     },
