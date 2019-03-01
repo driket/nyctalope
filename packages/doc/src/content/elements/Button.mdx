@@ -7,10 +7,20 @@ import { Button, Stack } from '@nyctalope/react'
 
 # Button
 
-<Wrapper>
+<Wrapper bothColorSchemes checkerBoard>
   <Stack distribute='start'>
     {['default', 'primary', 'secondary', 'ghost', 'danger'].map((type) => (
-      <Button>{type.charAt(0).toUpperCase() + type.slice(1)}</Button>
+      <Button type={type}>
+        {type.charAt(0).toUpperCase() + type.slice(1)}
+      </Button>
+    ))}
+  </Stack>
+</Wrapper>
+
+<Wrapper bothColorSchemes checkerBoard>
+  <Stack distribute='start'>
+    {['xs', 'sm', 'md', 'lg'].map((size) => (
+      <Button size={size}>Button {size}</Button>
     ))}
   </Stack>
 </Wrapper>

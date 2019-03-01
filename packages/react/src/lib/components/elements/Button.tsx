@@ -6,9 +6,10 @@ import React, {
   SFC,
   RefObject,
 } from 'react'
+
 import { ThemeContext, ColorSchemeType } from '@nyctalope/core'
 import useHover from '../../hooks/use-hover'
-import { mix } from 'polished'
+import { mix, transparentize } from 'polished'
 
 interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   handleClick?: MouseEventHandler
@@ -26,10 +27,16 @@ export const Button: SFC<ButtonProps> = (props: ButtonProps) => {
   const [active, setActive] = useState(false)
   const { colors } = useContext(ThemeContext)
   const { style = {} } = props
+  const { type = 'default' } = props
+  const { size = 'md' } = props
   const combinedStyle = {
     ...baseButtonStyle(colors, isHovered, active),
+    ...buttonStyleTypes(colors, isHovered, active)[type],
+    ...buttonStyleSizes[size],
     ...style,
   }
+  console.log('combinedStyle: ', combinedStyle)
+  console.log('type: ', type)
   return (
     <button
       onMouseDown={() => setActive(true)}
@@ -48,15 +55,12 @@ const baseButtonStyle = (
   isActive: boolean,
 ) => {
   return {
-    /* reset */
-    // margin: '0',
-
     /* borders */
     borderStyle: 'solid',
     borderRadius: '0.4em',
 
     /* font */
-    fontWeight: '600',
+    fontWeight: '500',
 
     /* don't select text */
     userSelect: 'none',
@@ -77,14 +81,7 @@ const baseButtonStyle = (
     borderWidth: '2px',
     padding: '4px 12px',
 
-    /* background */
-    backgroundColor: isActive
-      ? mix(0.85, colors.highlight, 'white')
-      : isHovered
-      ? mix(0.95, colors.highlight, 'white')
-      : colors.highlight,
     border: 'none',
-    color: 'white',
 
     // /* icon */
     // & .feather {
@@ -96,6 +93,95 @@ const baseButtonStyle = (
     //     display: block;
     // }
   }
+}
+
+interface ButtonStyleTypesInterface {
+  default: object
+  primary: object
+  secondary: object
+  danger: object
+  ghost: object
+}
+
+const buttonStyleTypes = (
+  colors: ColorSchemeType,
+  isHovered: boolean,
+  isActive: boolean,
+): ButtonStyleTypesInterface => {
+  return {
+    default: {
+      backgroundColor: isActive
+        ? mix(0.85, colors.lighterGrey, colors.main)
+        : isHovered
+        ? mix(0.95, colors.lighterGrey, colors.main)
+        : colors.lighterGrey,
+      color: colors.main,
+    },
+    primary: {
+      backgroundColor: isActive
+        ? mix(0.85, colors.highlight, 'white')
+        : isHovered
+        ? mix(0.95, colors.highlight, 'white')
+        : colors.highlight,
+      color: 'white',
+    },
+    secondary: {
+      backgroundColor: 'transparent',
+      color: isActive
+        ? mix(0.65, colors.main, colors.background)
+        : isHovered
+        ? mix(0.85, colors.main, colors.background)
+        : colors.main,
+      boxShadow: `inset 0px 0px 0px 1px ${transparentize(0.5, colors.main)}`,
+    },
+    danger: {
+      backgroundColor: isActive
+        ? mix(0.85, colors.danger, 'white')
+        : isHovered
+        ? mix(0.95, colors.danger, 'white')
+        : colors.danger,
+      color: 'white',
+    },
+    ghost: {
+      backgroundColor: 'transparent',
+      color: isActive
+        ? mix(0.65, colors.main, colors.background)
+        : isHovered
+        ? mix(0.85, colors.main, colors.background)
+        : colors.main,
+      boxShadow: 'none',
+    },
+  }
+}
+
+interface ButtonStyleSizesInterface {
+  xs: object
+  sm: object
+  md: object
+  lg: object
+}
+
+const buttonStyleSizes: ButtonStyleSizesInterface = {
+  xs: {
+    fontSize: '0.4em',
+    borderWidth: '1px',
+    padding: '3px 8px',
+  },
+  sm: {
+    fontSize: '0.6em',
+    borderWidth: '2px',
+    padding: '3px 12px',
+  },
+  md: {
+    fontSize: '0.7em',
+    borderWidth: '2px',
+    padding: '4px 12px',
+  },
+  lg: {
+    fontSize: '0.9em',
+    borderWidth: '2px',
+    padding: '5px 16px',
+  },
 }
 
 export default Button
