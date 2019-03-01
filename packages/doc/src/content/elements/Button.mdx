@@ -21,7 +21,7 @@ import { Button, Stack } from '@nyctalope/react'
 
 ## Sizes
 
-<Wrapper checkerBoard>
+<Wrapper>
   <Stack distribute='start'>
     {['xs', 'sm', 'md', 'lg'].map((size) => (
       <Button size={size}>Button {size}</Button>
@@ -31,12 +31,42 @@ import { Button, Stack } from '@nyctalope/react'
 
 ## With icons
 
-### Vertical button
+<Wrapper>
+  <Stack distribute='start'>
+    <Button icon='paperclip'>Default</Button>
+    <Button icon='codepen' type='primary'>
+      Primary
+    </Button>
+    <Button icon='play-circle' type='secondary'>
+      Secondary
+    </Button>
+    <Button icon='plus-square' type='ghost'>
+      Ghost
+    </Button>
+    <Button icon='power' type='danger'>
+      Danger
+    </Button>
+  </Stack>
+</Wrapper>
 
-<Wrapper checkerBoard>
+### Horizontal button with icons
+
+<Wrapper>
   <Stack distribute='start'>
     {['xs', 'sm', 'md', 'lg'].map((size) => (
       <Button size={size} icon='x-circle'>
+        Button {size}
+      </Button>
+    ))}
+  </Stack>
+</Wrapper>
+
+### Vertical ghost button with icons
+
+<Wrapper>
+  <Stack distribute='start'>
+    {['xs', 'sm', 'md', 'lg'].map((size) => (
+      <Button type='ghost' size={size} icon='x-circle' direction='vertical'>
         Button {size}
       </Button>
     ))}

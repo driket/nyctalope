@@ -8,6 +8,8 @@ import React, {
 } from 'react'
 
 import { ThemeContext, ColorSchemeType } from '@nyctalope/core'
+import { Icon } from './Icon'
+import { Stack } from '../layout/Stack'
 import useHover from '../../hooks/use-hover'
 import { mix, transparentize } from 'polished'
 
@@ -17,7 +19,7 @@ interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
   size?: 'xs' | 'sm' | 'md' | 'lg'
   children?: any
   icon?: string
-  direction?: 'vertical' | 'horizontal'
+  direction: 'vertical' | 'horizontal'
   style?: any
   iconSpacing?: number
 }
@@ -29,14 +31,16 @@ export const Button: SFC<ButtonProps> = (props: ButtonProps) => {
   const { style = {} } = props
   const { type = 'default' } = props
   const { size = 'md' } = props
+  const { direction = 'horizontal' } = props
   const combinedStyle = {
     ...baseButtonStyle(colors, isHovered, active),
     ...buttonStyleTypes(colors, isHovered, active)[type],
-    ...buttonStyleSizes[size],
+    ...buttonStyleSizes(direction)[size]['button'],
     ...style,
   }
-  console.log('combinedStyle: ', combinedStyle)
-  console.log('type: ', type)
+  const iconStyle = {
+    ...buttonStyleSizes(direction)[size]['icon'],
+  }
   return (
     <button
       onMouseDownCapture={() => setActive(true)}
@@ -45,7 +49,14 @@ export const Button: SFC<ButtonProps> = (props: ButtonProps) => {
       ref={hoverRef}
       style={combinedStyle}
     >
-      {props.children}
+      <Stack
+        direction={direction}
+        distribute='center'
+        gap={buttonStyleSizes(direction)[size]['gap']}
+      >
+        {props.icon && <Icon icon={props.icon} style={iconStyle} />}
+        {props.children && <span>{props.children}</span>}
+      </Stack>
     </button>
   )
 }
@@ -64,7 +75,10 @@ const baseButtonStyle = (
     fontWeight: '500',
 
     /* don't select text */
-    userSelect: 'none',
+    /* userSelect: 'none', */
+    MozUserSelect: 'none',
+    WebkitUserSelect: 'none',
+    msUserSelect: 'none',
 
     /* don't wrap icon/text */
     whiteSpace: 'nowrap',
@@ -149,34 +163,69 @@ const buttonStyleTypes = (
   }
 }
 
-interface ButtonStyleSizesInterface {
-  xs: object
-  sm: object
-  md: object
-  lg: object
+type StyledItems = {
+  button: object
+  icon: object
+  gap: number
+}
+type ButtonStyleSizesInterface = {
+  xs: StyledItems
+  sm: StyledItems
+  md: StyledItems
+  lg: StyledItems
 }
 
-const buttonStyleSizes: ButtonStyleSizesInterface = {
-  xs: {
-    fontSize: '0.4em',
-    borderWidth: '1px',
-    padding: '3px 8px',
-  },
-  sm: {
-    fontSize: '0.6em',
-    borderWidth: '2px',
-    padding: '3px 12px',
-  },
-  md: {
-    fontSize: '0.7em',
-    borderWidth: '2px',
-    padding: '4px 12px',
-  },
-  lg: {
-    fontSize: '0.9em',
-    borderWidth: '2px',
-    padding: '5px 16px',
-  },
+const buttonStyleSizes = (direction): ButtonStyleSizesInterface => {
+  return {
+    xs: {
+      button: {
+        fontSize: '0.4em',
+        borderWidth: '1px',
+        padding: '3px 8px',
+      },
+      icon: {
+        height: '10px',
+        width: '10px',
+      },
+      gap: direction == 'horizontal' ? 2 : 2,
+    },
+    sm: {
+      button: {
+        fontSize: '0.6em',
+        borderWidth: '2px',
+        padding: '3px 12px',
+      },
+      icon: {
+        height: '12px',
+        width: '12px',
+      },
+      gap: direction == 'horizontal' ? 4 : 2,
+    },
+    md: {
+      button: {
+        fontSize: '0.7em',
+        borderWidth: '2px',
+        padding: '4px 12px',
+      },
+      icon: {
+        height: '14px',
+        width: '14px',
+      },
+      gap: direction == 'horizontal' ? 6 : 2,
+    },
+    lg: {
+      button: {
+        fontSize: direction == 'horizontal' ? '0.9em' : '0.7em',
+        borderWidth: '2px',
+        padding: '5px 16px',
+      },
+      icon: {
+        height: '20px',
+        width: '20px',
+      },
+      gap: direction == 'horizontal' ? 8 : 2,
+    },
+  }
 }
 
 export default Button
