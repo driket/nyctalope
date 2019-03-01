@@ -71,6 +71,7 @@ const MenuCategory = (props) => {
           text-transform: capitalize;
           margin-left: 0px;
           font-size: 14px;
+          color: ${colors.main};
         `}
       >
         <FeatherIcon
