@@ -43,6 +43,7 @@
     "feather-icons-react": "^0.3.0",
     "gatsby": "^2.1.14",
     "gatsby-mdx": "^0.4.0",
+    "gatsby-plugin-emotion": "^4.0.4",
     "gatsby-plugin-google-fonts": "^0.0.4",
     "gatsby-plugin-typescript": "^2.0.8",
     "gatsby-source-filesystem": "^2.0.21",
@@ -50,6 +51,11 @@
     "gatsby-transformer-react-docgen": "^3.0.5",
     "gatsby-transformer-remark": "^2.2.6",
     "polished": "^3.0.0",
+    "react-live": "^1.12.0",
     "sync-files": "^1.0.3"
+  },
+  "devDependencies": {
+    "prettier": "^1.16.4",
+    "react-element-to-jsx-string": "^14.0.2"
   }
 }
