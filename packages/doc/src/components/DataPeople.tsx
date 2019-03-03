@@ -5,6 +5,7 @@ import { jsx, css, SerializedStyles } from '@emotion/core'
 import axios, { AxiosResponse } from 'axios'
 import { Frame } from '@nyctalope/react'
 import { ThemeContext } from '@nyctalope/core'
+import { CSSProperties } from '@emotion/serialize'
 
 export const PeoplePhoto = (props) => {
   const { colors } = useContext(ThemeContext)
@@ -19,10 +20,11 @@ export const PeoplePhoto = (props) => {
   const randomIndex = Math.floor(Math.random() * 10)
   const photo = people[randomIndex] ? people[randomIndex].photo : ''
   const style = props.style || {}
-  const combinedStyle = {
+  const combinedStyle: CSSProperties = {
     backgroundColor: colors.lighterGrey,
     backgroundImage: `url(${photo})`,
     backgroundSize: 'cover',
+    backgroundPosition: 'center',
     minHeight: '100px',
     display: 'inline-block',
     borderRadius: '10px',
