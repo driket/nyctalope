@@ -1561,7 +1561,7 @@
 "@nyctalope/react@file:packages/react":
   version "0.3.0-alpha.0"
   dependencies:
-    "@nyctalope/core" "file:../../Library/Caches/Yarn/v4/npm-@nyctalope-react-0.3.0-alpha.0-856185c0-a4ae-4938-8907-c2ed0cb0551a-1551554369509/node_modules/@nyctalope/core"
+    "@nyctalope/core" "file:../../Library/Caches/Yarn/v4/npm-@nyctalope-react-0.3.0-alpha.0-65c77a24-dafe-484b-9fd7-74617d46ba29-1551557499618/node_modules/@nyctalope/core"
     "@types/jest" "24.0.6"
     feather-icons-react "^0.3.0"
     polished "^3.0.0"
