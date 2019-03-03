@@ -91,9 +91,15 @@ const LeftPanel = (props) => {
       <div
         css={css`
           position: fixed;
-          background-color: ${mix(0.05, colors.main, colors.background)};
+          background-color: ${
+            prefersColorScheme == 'dark'
+              ? mix(0.05, colors.main, colors.background)
+              : colors.background
+          };
           min-height: 100%;
           min-width: 200px;
+          /* border-right: 1px solid ${colors.lightGrey}; */
+          box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
           /* border-right: 1px solid ${mix(
             0.1,
             colors.main,
