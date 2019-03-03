@@ -94,7 +94,7 @@ const LeftPanel = (props) => {
           background-color: ${
             prefersColorScheme == 'dark'
               ? mix(0.05, colors.main, colors.background)
-              : colors.background
+              : mix(0.01, colors.main, colors.background)
           };
           min-height: 100%;
           min-width: 200px;
