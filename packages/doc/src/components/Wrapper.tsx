@@ -33,7 +33,7 @@ export const Wrapper = (props) => {
   const canvasStyle: CSSProperties = {
     minHeight: minHeight ? minHeight : 'initial',
     borderRadius: '2px',
-    boxShadow: '0px 10px 20px rgba(0,0,0,0.1 )',
+    boxShadow: '0px 10px 20px rgba(0,0,0,0.1)',
     width:
       colorSchemeSeparatorDirection == 'horizontal'
         ? 'calc(100% - 30px)'
