@@ -28,8 +28,6 @@ export const Wrapper = (props) => {
     alignContent: 'start',
   }
   const code = reactElementToJSXString(props.children)
-  // const code =
-  // "<Stack distribute='start'>\n    {['default', 'primary', 'secondary', 'ghost', 'danger'].map((type) => (\n      <Button type={type}>\n        {type.charAt(0).toUpperCase() + type.slice(1)}\n      </Button>\n    ))}\n  </Stack>\n  "
   const canvasStyle: CSSProperties = {
     minHeight: minHeight ? minHeight : 'initial',
     borderRadius: '2px',
@@ -38,7 +36,6 @@ export const Wrapper = (props) => {
       colorSchemeSeparatorDirection == 'horizontal'
         ? 'calc(100% - 30px)'
         : 'calc(100% - 30px)',
-    // marginLeft: index == 1 ? '20px' : '0px',
   }
   const checkerBoardStyle: CSSProperties = {}
   return (
