@@ -32,6 +32,8 @@ export const Wrapper = (props) => {
   // "<Stack distribute='start'>\n    {['default', 'primary', 'secondary', 'ghost', 'danger'].map((type) => (\n      <Button type={type}>\n        {type.charAt(0).toUpperCase() + type.slice(1)}\n      </Button>\n    ))}\n  </Stack>\n  "
   const canvasStyle: CSSProperties = {
     minHeight: minHeight ? minHeight : 'initial',
+    borderRadius: '2px',
+    boxShadow: '0px 10px 20px rgba(0,0,0,0.1 )',
     width:
       colorSchemeSeparatorDirection == 'horizontal'
         ? 'calc(100% - 30px)'
@@ -65,9 +67,23 @@ export const Wrapper = (props) => {
             style={{
               backgroundColor: mix(0.97, colors.background, colors.main),
               color: colors.main,
+              // maxHeight: '400px',
+              overflow: 'scroll',
+              borderBottomLeftRadius: '4px',
+              borderBottomRightRadius: '4px',
+              padding: '20px',
             }}
           />
-          <LiveError />
+          <LiveError
+            style={{
+              backgroundColor: colors.danger,
+              color: 'white',
+              fontSize: '12px',
+              padding: '10px',
+              borderBottomLeftRadius: '4px',
+              borderBottomRightRadius: '4px',
+            }}
+          />
         </Canvas>
       </LiveProvider>
     </div>
@@ -83,8 +99,8 @@ type CanvasProps = {
 const Canvas = (props: CanvasProps) => {
   const { colors } = useContext(ThemeContext)
   const canvasBGStyle = {
-    border: `1px solid ${colors.lighterGrey}`,
-    padding: '15px',
+    border: `1px solid ${mix(0.97, colors.background, colors.main)}`,
+    padding: '0px',
     ...props.style,
   }
   return <div style={canvasBGStyle}>{props.children}</div>
@@ -92,11 +108,11 @@ const Canvas = (props: CanvasProps) => {
 
 const CheckerBoard = (props) => {
   const { colors } = useContext(ThemeContext)
-  const { checkerBoard = false } = props
+  const { checkerBoard = true } = props
   const backgroundColor = colors.background
   const alternateBackgroundColor = darken(0.05, backgroundColor)
   const baseBackgroundStyle = {
-    padding: '10px',
+    padding: '20px',
     backgroundColor: backgroundColor,
     color: colors.main,
     height: 'calc(100% - 20px)',

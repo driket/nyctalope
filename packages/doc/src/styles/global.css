@@ -18,3 +18,8 @@ body {
 #___gatsby > div {
     height: 100%;
 }
+
+/* Fix react-live style until it supports theming */
+.token.attr-name {
+  color: #888 !important;
+}
