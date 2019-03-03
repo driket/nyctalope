@@ -18,6 +18,8 @@ export const ComponentsMenuItems = (props) => {
     color: colors.grey,
     letterSpacing: '0.15em',
     fontFamily: fonts.heading,
+    marginTop: '28px',
+    marginBottom: '10px',
   }
   const baseMenuStyle = {
     fontFamily: fonts.main,
@@ -26,25 +28,48 @@ export const ComponentsMenuItems = (props) => {
     ...props.style,
     ...baseMenuStyle,
   }
+  const corePages = categorizedComponents.filter(
+    (category) => category.name == 'style',
+  )
+  const componentsPages = categorizedComponents.filter(
+    (category) => category.name != 'style' && category.name != 'experimental',
+  )
+  const experimentalPages = categorizedComponents.filter(
+    (category) => category.name == 'experimental',
+  )
   return (
     <div style={menuStyle}>
-      <h3 style={topLevelStyle}>COMPONENTS</h3>
-      {categorizedComponents.map((category) => {
+      <h3 style={topLevelStyle}>CORE</h3>
+      {corePages.map((category) => {
         return (
-          <ul
+          <MenuCategory
             key={category.id}
-            css={css`
-              font-family: ${fonts.heading};
-              padding-left: 0px;
-            `}
-          >
-            <MenuCategory
-              key={category.id}
-              icon={category.icon}
-              name={category.name}
-              components={category.components}
-            />
-          </ul>
+            icon={category.icon}
+            name={category.name}
+            components={category.components}
+          />
+        )
+      })}
+      <h3 style={topLevelStyle}>COMPONENTS</h3>
+      {componentsPages.map((category) => {
+        return (
+          <MenuCategory
+            key={category.id}
+            icon={category.icon}
+            name={category.name}
+            components={category.components}
+          />
+        )
+      })}
+      <h3 style={topLevelStyle}>PLAYGROUND</h3>
+      {experimentalPages.map((category) => {
+        return (
+          <MenuCategory
+            key={category.id}
+            icon={category.icon}
+            name={category.name}
+            components={category.components}
+          />
         )
       })}
     </div>
@@ -57,7 +82,7 @@ const MenuCategory = (props) => {
   const name = props.name || ''
   const components = props.components || []
   return (
-    <ul style={{ paddingLeft: '20px' }}>
+    <ul style={{ paddingLeft: '20px', fontFamily: fonts.heading }}>
       <li
         key={name}
         css={css`
@@ -72,6 +97,7 @@ const MenuCategory = (props) => {
           clear: both;
           text-transform: capitalize;
           margin-left: 0px;
+          margin-bottom: 0px;
           font-size: 14px;
           color: ${colors.main};
         `}
@@ -97,7 +123,7 @@ const MenuCategory = (props) => {
               css={css`
                 list-style: none;
                 margin: 0;
-                min-height: 16x;
+                min-height: 20px;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
@@ -133,6 +159,10 @@ const iconForCategory = (category) => {
     default:
       return 'box'
   }
+}
+
+const staticNavigation = {
+  core: {},
 }
 
 const categorizeComponents = (components) => {
