@@ -32,12 +32,14 @@ export const ComponentsMenuItems = (props) => {
       {categorizedComponents.map((category) => {
         return (
           <ul
+            key={category.id}
             css={css`
               font-family: ${fonts.heading};
               padding-left: 0px;
             `}
           >
             <MenuCategory
+              key={category.id}
               icon={category.icon}
               name={category.name}
               components={category.components}
