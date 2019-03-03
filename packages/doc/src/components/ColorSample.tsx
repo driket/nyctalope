@@ -34,13 +34,13 @@ export const ColorPalette = (props) => {
         flex-direction: column;
         border: 1px solid ${colors.lighterGrey};
         /* margin-bottom: 10px; */
-        width: 100px;
+        width: 85px;
       `}
     >
       <div
         css={css`
           display: block;
-          width: 100px;
+          width: 85px;
           height: 100px;
           background-color: ${processedColor};
         `}
