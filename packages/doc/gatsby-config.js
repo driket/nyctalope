@@ -28,5 +28,6 @@ module.exports = {
     `gatsby-transformer-json`,
     `gatsby-transformer-remark`,
     `gatsby-transformer-react-docgen`,
+    `gatsby-plugin-emotion`,
   ],
 }
