@@ -1,13 +1,17 @@
 import React, { CSSProperties, useContext, SFC, ReactChildren } from 'react'
 import { darken, transparentize, mix } from 'polished'
-import { ColorScheme, Fonts, ThemeContext } from '@nyctalope/core'
+import {
+  ColorScheme,
+  Fonts,
+  ThemeContext,
+  ColorSchemeType,
+} from '@nyctalope/core'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
 import reactElementToJSXString from 'react-element-to-jsx-string'
 import * as NyctalopeComponents from '@nyctalope/react'
 import * as NyctalopeDocComponents from '../components'
 
 type WrapperProps = {
-  colorSchemeSeparatorDirection: 'vertical' | 'horizontal'
   minHeight: string
   bothColorSchemes: boolean
   checkerBoard: boolean
@@ -15,29 +19,13 @@ type WrapperProps = {
 }
 
 export const Wrapper = (props) => {
-  const { colorSchemeSeparatorDirection = 'vertical' } = props
   const { minHeight } = props
   const currentColorScheme = useContext(ThemeContext)
   const { colors } = currentColorScheme
   const colorSchemes = props.bothColorSchemes
     ? ['dark', 'light']
     : [currentColorScheme.prefersColorScheme]
-  const wrapperStyle: CSSProperties = {
-    display: 'flex',
-    flexDirection: 'row',
-    alignContent: 'start',
-  }
   const code = reactElementToJSXString(props.children)
-  const canvasStyle: CSSProperties = {
-    minHeight: minHeight ? minHeight : 'initial',
-    borderRadius: '2px',
-    boxShadow: '0px 10px 20px rgba(0,0,0,0.1)',
-    width:
-      colorSchemeSeparatorDirection == 'horizontal'
-        ? 'calc(100% - 30px)'
-        : 'calc(100% - 30px)',
-  }
-  const checkerBoardStyle: CSSProperties = {}
   return (
     <div style={wrapperStyle}>
       <LiveProvider
@@ -45,7 +33,7 @@ export const Wrapper = (props) => {
         scope={{ ...NyctalopeComponents, ...NyctalopeDocComponents }}
         style={{ width: '100%' }}
       >
-        <Canvas {...props} style={canvasStyle}>
+        <Canvas {...props} style={canvasStyle(minHeight)}>
           {colorSchemes.map((theme, index) => {
             const wrapperTheme = {
               prefersColorScheme: theme,
@@ -60,27 +48,8 @@ export const Wrapper = (props) => {
               </ThemeContext.Provider>
             )
           })}
-          <LiveEditor
-            style={{
-              backgroundColor: mix(0.97, colors.background, colors.main),
-              color: colors.main,
-              // maxHeight: '400px',
-              overflow: 'scroll',
-              borderBottomLeftRadius: '4px',
-              borderBottomRightRadius: '4px',
-              padding: '20px',
-            }}
-          />
-          <LiveError
-            style={{
-              backgroundColor: colors.danger,
-              color: 'white',
-              fontSize: '12px',
-              padding: '10px',
-              borderBottomLeftRadius: '4px',
-              borderBottomRightRadius: '4px',
-            }}
-          />
+          <LiveEditor style={liveEditorStyle(colors)} />
+          <LiveError style={liveErrorStyle(colors)} />
         </Canvas>
       </LiveProvider>
     </div>
@@ -108,13 +77,67 @@ const CheckerBoard = (props) => {
   const { checkerBoard = true } = props
   const backgroundColor = colors.background
   const alternateBackgroundColor = darken(0.05, backgroundColor)
-  const baseBackgroundStyle = {
+
+  const backgroundStyle = {
+    ...baseBackgroundStyle(colors),
+    ...(checkerBoard
+      ? checkerBackgroundStyle(
+          backgroundColor,
+          alternateBackgroundColor,
+          colors,
+        )
+      : {}),
+  }
+  return <div style={backgroundStyle}>{props.children}</div>
+}
+
+const canvasStyle = (minHeight) =>
+  ({
+    minHeight: minHeight ? minHeight : 'initial',
+    borderRadius: '2px',
+    boxShadow: '0px 10px 20px rgba(0,0,0,0.1)',
+    width: 'calc(100% - 30px)',
+  } as CSSProperties)
+
+const wrapperStyle: CSSProperties = {
+  display: 'flex',
+  flexDirection: 'row',
+  alignContent: 'start',
+}
+
+const liveEditorStyle = (colors: ColorSchemeType) =>
+  ({
+    backgroundColor: mix(0.97, colors.background, colors.main),
+    color: colors.main,
+    overflow: 'scroll',
+    borderBottomLeftRadius: '4px',
+    borderBottomRightRadius: '4px',
     padding: '20px',
-    backgroundColor: backgroundColor,
+  } as CSSProperties)
+
+const liveErrorStyle = (colors: ColorSchemeType) =>
+  ({
+    backgroundColor: colors.danger,
+    color: 'white',
+    fontSize: '12px',
+    padding: '10px',
+    borderBottomLeftRadius: '4px',
+    borderBottomRightRadius: '4px',
+  } as CSSProperties)
+
+const baseBackgroundStyle = (colors: ColorSchemeType) =>
+  ({
+    padding: '20px',
+    backgroundColor: colors.background,
     color: colors.main,
     height: 'calc(100% - 20px)',
-  }
-  const mozCheckerBackgroundStyle: CSSProperties = {
+  } as CSSProperties)
+
+const mozCheckerBackgroundStyle = (
+  backgroundColor: string,
+  alternateBackgroundColor: string,
+) =>
+  ({
     backgroundImage: `
       -moz-linear-gradient(
         45deg,
@@ -137,8 +160,13 @@ const CheckerBoard = (props) => {
         ${alternateBackgroundColor} 75%
       )
       `,
-  }
-  const webkitCheckerBackgroundStyle: CSSProperties = {
+  } as CSSProperties)
+
+const webkitCheckerBackgroundStyle = (
+  backgroundColor: string,
+  alternateBackgroundColor: string,
+) =>
+  ({
     backgroundImage: `
       -webkit-gradient(
         linear,
@@ -151,22 +179,20 @@ const CheckerBoard = (props) => {
       -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.75, transparent), color-stop(0.75, ${alternateBackgroundColor})),
       -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0.75, transparent), color-stop(0.75, ${alternateBackgroundColor}))
     `,
-  }
+  } as CSSProperties)
 
-  const checkerBackgroundStyle: CSSProperties = {
+const checkerBackgroundStyle = (
+  backgroundColor: string,
+  alternateBackgroundColor: string,
+  colors: ColorSchemeType,
+) =>
+  ({
     backgroundColor: backgroundColor,
-    ...(checkerBoard ? mozCheckerBackgroundStyle : {}),
-    ...(checkerBoard ? webkitCheckerBackgroundStyle : {}),
+    ...mozCheckerBackgroundStyle(backgroundColor, alternateBackgroundColor),
+    ...webkitCheckerBackgroundStyle(backgroundColor, alternateBackgroundColor),
     backgroundSize: '20px 20px',
     color: colors.main,
     backgroundPosition: '0 0, 10px 0, 10px -10px, 0px 10px',
-  }
-
-  const backgroundStyle = {
-    ...baseBackgroundStyle,
-    ...checkerBackgroundStyle,
-  }
-  return <div style={backgroundStyle}>{props.children}</div>
-}
+  } as CSSProperties)
 
 export default Wrapper
