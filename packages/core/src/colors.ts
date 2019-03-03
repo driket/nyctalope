@@ -48,7 +48,7 @@ export const ColorScheme: ThemedColorSchemeType = {
     },
   },
   dark: {
-    danger: '#e7467c',
+    danger: '#eE5D55',
     success: '#2FA261',
     main: 'white',
     inverted: 'black',
