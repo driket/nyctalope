@@ -27,6 +27,9 @@ export const ComponentsMenuItems = (props) => {
   const menuStyle = {
     ...props.style,
     ...baseMenuStyle,
+    MozUserSelect: 'none',
+    WebkitUserSelect: 'none',
+    msUserSelect: 'none',
   }
   const corePages = categorizedComponents.filter(
     (category) => category.name == 'style',
@@ -82,7 +85,12 @@ const MenuCategory = (props) => {
   const name = props.name || ''
   const components = props.components || []
   return (
-    <ul style={{ paddingLeft: '20px', fontFamily: fonts.heading }}>
+    <ul
+      style={{
+        paddingLeft: '20px',
+        fontFamily: fonts.heading,
+      }}
+    >
       <li
         key={name}
         css={css`

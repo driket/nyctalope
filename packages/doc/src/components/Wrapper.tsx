@@ -96,7 +96,7 @@ const canvasStyle = (minHeight) =>
     minHeight: minHeight ? minHeight : 'initial',
     borderRadius: '2px',
     boxShadow: '0px 10px 20px rgba(0,0,0,0.1)',
-    width: 'calc(100% - 30px)',
+    width: '100%',
   } as CSSProperties)
 
 const wrapperStyle: CSSProperties = {

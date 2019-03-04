@@ -86,6 +86,8 @@ const LeftPanel = (props) => {
         display: flex;
         margin: 0;
         padding: 0;
+        /* overflow-y: scroll; */
+        /* height: 100%; */
       `}
     >
       <div
@@ -98,6 +100,9 @@ const LeftPanel = (props) => {
           };
           min-height: 100%;
           min-width: 200px;
+          overflow-y: scroll;
+          height: 100%;
+
           /* border-right: 1px solid ${colors.lightGrey}; */
           box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
           /* border-right: 1px solid ${mix(

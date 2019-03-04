@@ -1,23 +1,26 @@
-import React, { useContext, SFC } from 'react'
+import React, { useContext, SFC, CSSProperties } from 'react'
 import { ThemeContext } from '@nyctalope/core'
 import { PillStyle } from './Pill.style'
 
-type PillProps = {
+export type PillProps = {
   value: number
   title: string
   themedcolor: string
   showLegend: boolean
   size: string
-  style: any
+  style: CSSProperties
+  legendStyle: CSSProperties
   children: any
 }
 
 export const Pill = (props: PillProps) => {
   const { colors } = useContext(ThemeContext)
+  const { style = {} } = props
+  const { legendStyle = {} } = props
   const totalSegmentsValue = sumSegmentsValue(props.children)
   return (
     <div {...props} style={{ width: '100%' }}>
-      <div style={PillStyle.pillStyle} {...props}>
+      <div style={{ ...PillStyle.pillStyle, ...style }} {...props}>
         {React.Children.map(props.children, (segment) => (
           <PillSegment
             {...segment.props}
@@ -26,7 +29,7 @@ export const Pill = (props: PillProps) => {
         ))}
       </div>
       {props.showLegend && (
-        <div style={PillStyle.legendStyle(colors.grey)}>
+        <div style={{ ...PillStyle.legendStyle(colors.grey), ...legendStyle }}>
           {React.Children.map(props.children, (segment) => (
             <div style={{ display: 'flex' }}>
               <div
@@ -55,9 +58,13 @@ export const PillSegment: SFC<PillSegmentProps> = (props: PillSegmentProps) => {
   const { colors } = useContext(ThemeContext)
   const { themedColor } = props || 'main'
   const { size } = props || '33.33%'
+  const { style = {} } = props
   const processedColor = colors[themedColor]
   return (
-    <div style={PillStyle.pillSegmentStyle(size, processedColor)} {...props} />
+    <div
+      {...props}
+      style={{ ...PillStyle.pillSegmentStyle(size, processedColor), ...style }}
+    />
   )
 }
 
