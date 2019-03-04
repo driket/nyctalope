@@ -29,6 +29,36 @@ export const Page = (props) => {
         p {
           color: ${transparentize(0.22, colors.main)};
         }
+        table {
+          width: 100%;
+        }
+        table > thead > th {
+          border-bottom: 1px solid ${colors.lighterGrey};
+          margin-bottom: 20px;
+          font-family: ${fonts.heading};
+          font-weight: 600;
+          /* border-collapse:separate;  */
+          /* border-spacing:5px 5px; */
+          text-align: left;
+          padding-bottom: 10px;
+        }
+        table > thead {
+          margin-bottom: 30px;
+        }
+        table > tbody  {
+          padding-top: 30px;
+        }
+        table > tbody > tr  > td {
+          padding-bottom: 10px;
+        }
+        table > tbody > tr:first-child > td {
+          padding-top: 10px;
+          
+        }
+        table > tfoot > td {
+          border-top: 1px solid ${colors.lighterGrey};
+          padding-top: 10px;
+        }
       `}
     >
       {props.children}
