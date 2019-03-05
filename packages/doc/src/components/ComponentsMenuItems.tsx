@@ -34,8 +34,11 @@ export const ComponentsMenuItems = (props) => {
   const corePages = categorizedComponents.filter(
     (category) => category.name == 'style',
   )
+  const layoutPages = categorizedComponents.filter(
+    (category) => category.name == 'layout',
+  )
   const componentsPages = categorizedComponents.filter(
-    (category) => category.name != 'style' && category.name != 'experimental',
+    (category) => category.name == 'elements' || category.name == 'data-viz' || category.name == 'document',
   )
   const experimentalPages = categorizedComponents.filter(
     (category) => category.name == 'experimental',
@@ -44,6 +47,17 @@ export const ComponentsMenuItems = (props) => {
     <div style={menuStyle}>
       <h3 style={topLevelStyle}>CORE</h3>
       {corePages.map((category) => {
+        return (
+          <MenuCategory
+            key={category.id}
+            icon={category.icon}
+            name={category.name}
+            components={category.components}
+          />
+        )
+      })}
+      <h3 style={topLevelStyle}>BASE</h3>
+      {layoutPages.map((category) => {
         return (
           <MenuCategory
             key={category.id}
