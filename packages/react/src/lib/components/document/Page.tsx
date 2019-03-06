@@ -28,6 +28,7 @@ export const Page = (props) => {
         }
         p {
           color: ${transparentize(0.22, colors.main)};
+          white-space: initial;
         }
         table {
           width: 100%;
