@@ -77,7 +77,7 @@ const CheckerBoard = (props) => {
 
   const backgroundStyle = {
     ...baseBackgroundStyle(colors),
-    ...(checkerBoard
+    ...(checkerBoard == true
       ? checkerBackgroundStyle(
           backgroundColor,
           alternateBackgroundColor,
