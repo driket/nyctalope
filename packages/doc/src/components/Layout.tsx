@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { useContext } from 'react'
+import React, { useContext, useLayoutEffect } from 'react'
 import { jsx, css } from '@emotion/core'
 import { mix } from 'polished'
 import { Link, StaticQuery, graphql } from 'gatsby'
@@ -9,7 +9,9 @@ import { ThemeContext } from '@nyctalope/core'
 
 export const Layout = (props) => {
   const { colors } = useContext(ThemeContext)
-  document.body.style.backgroundColor = colors.background
+  useLayoutEffect(() => {
+    document.body.style.backgroundColor = colors.background
+  }, [colors])
   return (
     <Stack
       distribute='space-between'
