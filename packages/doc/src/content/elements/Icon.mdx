@@ -11,14 +11,14 @@ Full list: https://feathericons.com
 
 ## Examples
 
-<Wrapper>
-  <Grid numCol={5} numColXS={1} numColSM={1} numColMD={2} numColLG={4}>
-    {['file', 'circle', 'moon'].map((icon) => (
-      <Stack direction='vertical'>
-        <Icon icon={icon} />
-        {icon}
-      </Stack>
-    ))}
-    <span>...</span>
-  </Grid>
-</Wrapper>
+```jsx
+<Grid numCol={5} numColXS={1} numColSM={1} numColMD={2} numColLG={4}>
+  {['file', 'circle', 'moon'].map((icon) => (
+    <Stack direction='vertical'>
+      <Icon icon={icon} />
+      {icon}
+    </Stack>
+  ))}
+  <span>...</span>
+</Grid>
+```

@@ -7,7 +7,6 @@ import {
   ColorSchemeType,
 } from '@nyctalope/core'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live'
-import reactElementToJSXString from 'react-element-to-jsx-string'
 import * as NyctalopeComponents from '@nyctalope/react'
 import * as NyctalopeDocComponents from '../components'
 
@@ -23,7 +22,7 @@ export const Wrapper = (props) => {
   const colorSchemes = props.bothColorSchemes
     ? ['dark', 'light']
     : [currentColorScheme.prefersColorScheme]
-  const code = reactElementToJSXString(props.children)
+  const code = React.Children.toArray(props.children).join('\n')
   return (
     <div style={wrapperStyle}>
       <LiveProvider

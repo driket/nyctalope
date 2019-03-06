@@ -11,26 +11,26 @@ Display items in a grid layout.
 
 ## Simple Grid
 
-<Wrapper>
-  <Grid numCol={5}>
-    {Array(10)
-      .fill('')
-      .map((person) => (
-        <PeoplePhoto />
-      ))}
-  </Grid>
-</Wrapper>
+```jsx
+<Grid numCol={5}>
+  {Array(10)
+    .fill('')
+    .map((person) => (
+      <PeoplePhoto />
+    ))}
+</Grid>
+```
 
 ## Responsive Grid
 
 Columns number can be adjusted depending on the screeen width (responsive)
 
-<Wrapper>
-  <Grid numCol={5} numColXS={1} numColSM={1} numColMD={2} numColLG={4}>
-    {Array(10)
-      .fill('')
-      .map((person) => (
-        <PeoplePhoto />
-      ))}
-  </Grid>
-</Wrapper>
+```jsx
+<Grid numCol={5} numColXS={1} numColSM={1} numColMD={2} numColLG={4}>
+  {Array(10)
+    .fill('')
+    .map((person) => (
+      <PeoplePhoto />
+    ))}
+</Grid>
+```

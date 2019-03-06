@@ -11,110 +11,104 @@ Render a web view. Perfect for documentation, rich text, printable content, etc.
 
 ## Headings
 
-<Wrapper checkerBoard={false}>
-  <Page>
-    <h1>Heading 1</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum
-    </p>
-    <a href=''>Link</a>
-    <h2>Heading 2</h2>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum
-    </p>
-    <h3>Heading 3</h3>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum
-    </p>
-    <h4>Heading 4</h4>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum
-    </p>
-  </Page>
-</Wrapper>
+```jsx
+<Page>
+  <h1>Heading 1</h1>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+  </p>
+  <a href=''>Link</a>
+  <h2>Heading 2</h2>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+  </p>
+  <h3>Heading 3</h3>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+  </p>
+  <h4>Heading 4</h4>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+  </p>
+</Page>
+```
 
 ## Bullet points
 
-<Wrapper checkerBoard={false}>
-  <Page>
-    <h1>Heading 1</h1>
+```jsx
+<Page>
+  <h1>Heading 1</h1>
+  <ul>
+    <li>Lorem ipsum dolor sit amet.</li>
+    <li>Consectetur adipiscing elit.</li>
+    <li>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+    <li>
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+      aliquip ex ea commodo consequat.
+    </li>
     <ul>
-      <li>Lorem ipsum dolor sit amet.</li>
-      <li>Consectetur adipiscing elit.</li>
       <li>
         Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </li>
+      <li>Consectetur adipiscing elit.</li>
       <li>
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
         ut aliquip ex ea commodo consequat.
       </li>
-      <ul>
-        <li>
-          Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </li>
-        <li>Consectetur adipiscing elit.</li>
-        <li>
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-          nisi ut aliquip ex ea commodo consequat.
-        </li>
-        <li>Lorem ipsum dolor sit amet.</li>
-      </ul>
+      <li>Lorem ipsum dolor sit amet.</li>
     </ul>
-  </Page>
-</Wrapper>
+  </ul>
+</Page>
+```
 
 ## Tables
 
-<Wrapper checkerBoard={false}>
-  <Page>
-    <h1>Heading 1</h1>
-    <table>
-      <thead>
-        <th>Header 1</th>
-        <th>Header 2</th>
-        <th>Header 3</th>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Cell 1-1</td>
-          <td>Cell 2-1</td>
-          <td>Cell 3-1</td>
-        </tr>
-        <tr>
-          <td>Cell 1-2</td>
-          <td>Cell 2-2</td>
-          <td>Cell 3-2</td>
-        </tr>
-      </tbody>
-      <tfoot>
-        <td>Footer 1</td>
-        <td>Footer 2</td>
-        <td>Footer 3</td>
-      </tfoot>
-    </table>
-  </Page>
-</Wrapper>
+```jsx
+<Page>
+  <h1>Heading 1</h1>
+  <table>
+    <thead>
+      <th>Header 1</th>
+      <th>Header 2</th>
+      <th>Header 3</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Cell 1-1</td>
+        <td>Cell 2-1</td>
+        <td>Cell 3-1</td>
+      </tr>
+      <tr>
+        <td>Cell 1-2</td>
+        <td>Cell 2-2</td>
+        <td>Cell 3-2</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <td>Footer 1</td>
+      <td>Footer 2</td>
+      <td>Footer 3</td>
+    </tfoot>
+  </table>
+</Page>
+```

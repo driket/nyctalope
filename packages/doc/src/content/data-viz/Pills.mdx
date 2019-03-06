@@ -9,28 +9,20 @@ import { Pill, PillSegment } from '@nyctalope/react'
 
 ## Segmented pill with legend
 
-<Wrapper>
-  <Pill showLegend>
-    <PillSegment title={'Passed tests'} value={4} themedColor={'grey'} />
-    <PillSegment title={'Failed tests'} value={2} themedColor={'danger'} />
-    <PillSegment
-      title={'Pending tests'}
-      value={1}
-      themedColor={'lighterGrey'}
-    />
-  </Pill>
-</Wrapper>
+```jsx
+<Pill showLegend>
+  <PillSegment title={'Passed tests'} value={4} themedColor={'grey'} />
+  <PillSegment title={'Failed tests'} value={2} themedColor={'danger'} />
+  <PillSegment title={'Pending tests'} value={1} themedColor={'lighterGrey'} />
+</Pill>
+```
 
 ## Sucessful
 
-<Wrapper>
-  <Pill showLegend>
-    <PillSegment title={'Passed tests'} value={10} themedColor={'success'} />
-    <PillSegment title={'Failed tests'} value={0} themedColor={'danger'} />
-    <PillSegment
-      title={'Pending tests'}
-      value={0}
-      themedColor={'lighterGrey'}
-    />
-  </Pill>
-</Wrapper>
+```jsx
+<Pill showLegend>
+  <PillSegment title={'Passed tests'} value={10} themedColor={'success'} />
+  <PillSegment title={'Failed tests'} value={0} themedColor={'danger'} />
+  <PillSegment title={'Pending tests'} value={0} themedColor={'lighterGrey'} />
+</Pill>
+```

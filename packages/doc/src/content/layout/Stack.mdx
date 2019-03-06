@@ -13,29 +13,29 @@ import { Stack, Icon } from '@nyctalope/react'
 
 Items are packed toward the start line.
 
-<Wrapper checkerBoard>
-  <Stack distribute='start'>
-    {Array(3)
-      .fill('')
-      .map((person) => (
-        <Button icon='x-circle' />
-      ))}
-  </Stack>
-</Wrapper>
+```jsx
+<Stack distribute='start'>
+  {Array(3)
+    .fill('')
+    .map((person) => (
+      <Button icon='x-circle' />
+    ))}
+</Stack>
+```
 
 ### Distribute 'end'
 
 Items are packed toward to end line.
 
-<Wrapper checkerBoard>
-  <Stack distribute='end'>
-    {Array(3)
-      .fill('')
-      .map((person) => (
-        <Button icon='x-circle' />
-      ))}
-  </Stack>
-</Wrapper>
+```jsx
+<Stack distribute='end'>
+  {Array(3)
+    .fill('')
+    .map((person) => (
+      <Button icon='x-circle' />
+    ))}
+</Stack>
+```
 
 ### Distribute 'center'
 
@@ -43,147 +43,143 @@ Items are centered along the line.
 
 _Options_: no gap
 
-<Wrapper checkerBoard>
-  <Stack distribute='center'>
-    {Array(3)
-      .fill('')
-      .map((person) => (
-        <Button icon='x-circle' />
-      ))}
-  </Stack>
-</Wrapper>
+```jsx
+<Stack distribute='center'>
+  {Array(3)
+    .fill('')
+    .map((person) => (
+      <Button icon='x-circle' />
+    ))}
+</Stack>
+```
 
 ### Distribute 'space between'
 
 Items are evenly distributed in the line; first item is on the start line, last item on the end line.
 
-<Wrapper checkerBoard>
-  <Stack distribute='space-between'>
-    {Array(3)
-      .fill('')
-      .map((person) => (
-        <Button icon='x-circle' />
-      ))}
-  </Stack>
-</Wrapper>
+```jsx
+<Stack distribute='space-between'>
+  {Array(3)
+    .fill('')
+    .map((person) => (
+      <Button icon='x-circle' />
+    ))}
+</Stack>
+```
 
 ### Distribute 'space around'
 
 Items are evenly distributed in the line with equal space around them.
 
-<Wrapper checkerBoard>
-  <Stack distribute='space-around'>
-    {Array(3)
-      .fill('')
-      .map((person) => (
-        <Button icon='x-circle' />
-      ))}
-  </Stack>
-</Wrapper>
+```jsx
+<Stack distribute='space-around'>
+  {Array(3)
+    .fill('')
+    .map((person) => (
+      <Button icon='x-circle' />
+    ))}
+</Stack>
+```
 
 ### Distribute 'space evenly'
 
 Items are distributed so that the spacing between any two adjacent alignment subjects, before the first alignment subject, and after the last alignment subject is the same.
 
-<Wrapper checkerBoard>
-  <Stack distribute='space-evenly'>
-    {Array(3)
-      .fill('')
-      .map((person) => (
-        <Button icon='x-circle' />
-      ))}
-  </Stack>
-</Wrapper>
+```jsx
+<Stack distribute='space-evenly'>
+  {Array(3)
+    .fill('')
+    .map((person) => (
+      <Button icon='x-circle' />
+    ))}
+</Stack>
+```
 
 ## Vertical direction
 
 ### Distribute 'start' - vertical
 
-<Wrapper checkerBoard>
-  <Stack distribute='start' direction='vertical' style={{ minHeight: '150px' }}>
-    {Array(3)
-      .fill('')
-      .map((person) => (
-        <Button icon='x-circle' />
-      ))}
-  </Stack>
-</Wrapper>
+```jsx
+<Stack distribute='start' direction='vertical' style={{ minHeight: '150px' }}>
+  {Array(3)
+    .fill('')
+    .map((person) => (
+      <Button icon='x-circle' />
+    ))}
+</Stack>
+```
 
 ### Distribute 'end' - vertical
 
-<Wrapper checkerBoard>
-  <Stack distribute='end' direction='vertical' style={{ minHeight: '150px' }}>
-    {Array(3)
-      .fill('')
-      .map((person) => (
-        <Button icon='x-circle' />
-      ))}
-  </Stack>
-</Wrapper>
+```jsx
+<Stack distribute='end' direction='vertical' style={{ minHeight: '150px' }}>
+  {Array(3)
+    .fill('')
+    .map((person) => (
+      <Button icon='x-circle' />
+    ))}
+</Stack>
+```
 
 ### Distribute 'center' - vertical
 
-<Wrapper checkerBoard>
-  <Stack
-    distribute='center'
-    direction='vertical'
-    style={{ minHeight: '150px' }}
-  >
-    {Array(3)
-      .fill('')
-      .map((person) => (
-        <Button icon='x-circle' />
-      ))}
-  </Stack>
-</Wrapper>
+```jsx
+<Stack distribute='center' direction='vertical' style={{ minHeight: '150px' }}>
+  {Array(3)
+    .fill('')
+    .map((person) => (
+      <Button icon='x-circle' />
+    ))}
+</Stack>
+```
 
 ### Distribute 'space between' - vertical
 
-<Wrapper checkerBoard>
-  <Stack
-    distribute='space-between'
-    direction='vertical'
-    style={{ minHeight: '150px' }}
-  >
-    {Array(3)
-      .fill('')
-      .map((person) => (
-        <Button icon='x-circle' />
-      ))}
-  </Stack>
-</Wrapper>
+```jsx
+<Stack
+  distribute='space-between'
+  direction='vertical'
+  style={{ minHeight: '150px' }}
+>
+  {Array(3)
+    .fill('')
+    .map((person) => (
+      <Button icon='x-circle' />
+    ))}
+</Stack>
+```
 
 ### Distribute 'space around' - vertical
 
-<Wrapper checkerBoard>
-  <Stack
-    distribute='space-around'
-    direction='vertical'
-    style={{ minHeight: '150px' }}
-  >
-    {Array(3)
-      .fill('')
-      .map((person) => (
-        <Button icon='x-circle' />
-      ))}
-  </Stack>
-</Wrapper>
+```jsx
+<Stack
+  distribute='space-around'
+  direction='vertical'
+  style={{ minHeight: '150px' }}
+>
+  {Array(3)
+    .fill('')
+    .map((person) => (
+      <Button icon='x-circle' />
+    ))}
+</Stack>
+```
 
 ### Distribute 'space evenly' - vertical
 
-<Wrapper checkerBoard>
-  <Stack
-    distribute='space-evenly'
-    direction='vertical'
-    style={{ minHeight: '150px' }}
-  >
-    {Array(3)
-      .fill('')
-      .map((person) => (
-        <Button icon='x-circle' />
-      ))}
-  </Stack>
-</Wrapper>
+```jsx
+<Stack
+  distribute='space-evenly'
+  direction='vertical'
+  style={{ minHeight: '150px' }}
+>
+  {Array(3)
+    .fill('')
+    .map((person) => (
+      <Button icon='x-circle' />
+    ))}
+</Stack>
+```
 
 ## Gap
 
@@ -191,24 +187,24 @@ When distribution is "start", "center" or "end", a gap can be passed as attribut
 
 ### No gap
 
-<Wrapper checkerBoard>
-  <Stack distribute='start' gap={0}>
-    {Array(3)
-      .fill('')
-      .map((person) => (
-        <Button icon='x-circle' />
-      ))}
-  </Stack>
-</Wrapper>
+```jsx
+<Stack distribute='start' gap={0}>
+  {Array(3)
+    .fill('')
+    .map((person) => (
+      <Button icon='x-circle' />
+    ))}
+</Stack>
+```
 
 ### 30px gap
 
-<Wrapper checkerBoard>
-  <Stack distribute='start' gap={30}>
-    {Array(3)
-      .fill('')
-      .map((person) => (
-        <Button icon='x-circle' />
-      ))}
-  </Stack>
-</Wrapper>
+```jsx
+<Stack distribute='start' gap={30}>
+  {Array(3)
+    .fill('')
+    .map((person) => (
+      <Button icon='x-circle' />
+    ))}
+</Stack>
+```

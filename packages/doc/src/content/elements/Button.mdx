@@ -9,66 +9,64 @@ import { Button, Stack } from '@nyctalope/react'
 
 ## Types
 
-<Wrapper checkerBoard>
-  <Stack distribute='start'>
-    {['default', 'primary', 'secondary', 'ghost', 'danger'].map((type) => (
-      <Button type={type}>
-        {type.charAt(0).toUpperCase() + type.slice(1)}
-      </Button>
-    ))}
-  </Stack>
-</Wrapper>
+```jsx
+<Stack distribute='start'>
+  {['default', 'primary', 'secondary', 'ghost', 'danger'].map((type) => (
+    <Button type={type}>{type.charAt(0).toUpperCase() + type.slice(1)}</Button>
+  ))}
+</Stack>
+```
 
 ## Sizes
 
-<Wrapper>
-  <Stack distribute='start'>
-    {['xs', 'sm', 'md', 'lg'].map((size) => (
-      <Button size={size}>Button {size}</Button>
-    ))}
-  </Stack>
-</Wrapper>
+```jsx
+<Stack distribute='start'>
+  {['xs', 'sm', 'md', 'lg'].map((size) => (
+    <Button size={size}>Button {size}</Button>
+  ))}
+</Stack>
+```
 
 ## With icons
 
-<Wrapper>
-  <Stack distribute='start'>
-    <Button icon='paperclip'>Default</Button>
-    <Button icon='codepen' type='primary'>
-      Primary
-    </Button>
-    <Button icon='play-circle' type='secondary'>
-      Secondary
-    </Button>
-    <Button icon='plus-square' type='ghost'>
-      Ghost
-    </Button>
-    <Button icon='power' type='danger'>
-      Danger
-    </Button>
-  </Stack>
-</Wrapper>
+```jsx
+<Stack distribute='start'>
+  <Button icon='paperclip'>Default</Button>
+  <Button icon='codepen' type='primary'>
+    Primary
+  </Button>
+  <Button icon='play-circle' type='secondary'>
+    Secondary
+  </Button>
+  <Button icon='plus-square' type='ghost'>
+    Ghost
+  </Button>
+  <Button icon='power' type='danger'>
+    Danger
+  </Button>
+</Stack>
+```
 
 ### Horizontal button with icons
 
-<Wrapper>
-  <Stack distribute='start'>
-    {['xs', 'sm', 'md', 'lg'].map((size) => (
-      <Button size={size} icon='x-circle'>
-        Button {size}
-      </Button>
-    ))}
-  </Stack>
-</Wrapper>
+```jsx
+<Stack distribute='start'>
+  {['xs', 'sm', 'md', 'lg'].map((size) => (
+    <Button size={size} icon='x-circle'>
+      Button {size}
+    </Button>
+  ))}
+</Stack>
+```
 
 ### Vertical ghost button with icons
 
-<Wrapper>
-  <Stack distribute='start'>
-    {['xs', 'sm', 'md', 'lg'].map((size) => (
-      <Button type='ghost' size={size} icon='x-circle' direction='vertical'>
-        Button {size}
-      </Button>
-    ))}
-  </Stack>
-</Wrapper>
+```jsx
+<Stack distribute='start'>
+  {['xs', 'sm', 'md', 'lg'].map((size) => (
+    <Button type='ghost' size={size} icon='x-circle' direction='vertical'>
+      Button {size}
+    </Button>
+  ))}
+</Stack>
+```
