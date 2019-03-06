@@ -9,6 +9,7 @@ import { ThemeContext } from '@nyctalope/core'
 
 export const Layout = (props) => {
   const { colors } = useContext(ThemeContext)
+  // update document background when colors are changing in context
   useLayoutEffect(() => {
     document.body.style.backgroundColor = colors.background
   }, [colors])
