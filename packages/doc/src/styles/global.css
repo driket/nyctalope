@@ -23,3 +23,6 @@ body {
 .token.attr-name {
   color: #888 !important;
 }
+.token.string {
+  color: #888 !important;
+}
