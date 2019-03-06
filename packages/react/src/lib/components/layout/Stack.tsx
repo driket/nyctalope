@@ -22,11 +22,12 @@ type StackType = {
 export const Stack = (props: StackType) => {
   const { direction = 'horizontal' } = props
   const { reverse = false } = props
+  const { style = {}} = props
   const { distribute = 'start' } = props
   const { alignItems = 'center' } = props
   const { gap = 10 } = props
   return (
-    <div css={stackStyle(direction, reverse, distribute, alignItems, gap)}>
+    <div css={stackStyle(direction, reverse, distribute, alignItems, gap)} style={style}>
       {props.children}
       {/* <span>direction={direction}</span>
       <span>flexDirection={getFlexDirection(direction, reverse)}</span>

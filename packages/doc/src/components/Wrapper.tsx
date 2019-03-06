@@ -12,14 +12,12 @@ import * as NyctalopeComponents from '@nyctalope/react'
 import * as NyctalopeDocComponents from '../components'
 
 type WrapperProps = {
-  minHeight: string
   bothColorSchemes: boolean
   checkerBoard: boolean
   children: any
 }
 
 export const Wrapper = (props) => {
-  const { minHeight } = props
   const currentColorScheme = useContext(ThemeContext)
   const { colors } = currentColorScheme
   const colorSchemes = props.bothColorSchemes
@@ -33,7 +31,7 @@ export const Wrapper = (props) => {
         scope={{ ...NyctalopeComponents, ...NyctalopeDocComponents }}
         style={{ width: '100%' }}
       >
-        <Canvas {...props} style={canvasStyle(minHeight)}>
+        <Canvas {...props} style={canvasStyle()}>
           {colorSchemes.map((theme, index) => {
             const wrapperTheme = {
               prefersColorScheme: theme,
@@ -91,9 +89,8 @@ const CheckerBoard = (props) => {
   return <div style={backgroundStyle}>{props.children}</div>
 }
 
-const canvasStyle = (minHeight) =>
+const canvasStyle = () =>
   ({
-    minHeight: minHeight ? minHeight : 'initial',
     borderRadius: '2px',
     boxShadow: '0px 10px 20px rgba(0,0,0,0.1)',
     width: '100%',
