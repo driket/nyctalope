@@ -123,11 +123,12 @@ const LeftPanel = (props) => {
               font-style: normal;
               font-family: ${fonts.brand};
               font-size: 16px;
-              color: ${colors.main};
+              color: ${colors.grey};
               margin-left: 20px;
+              font-weight: 400;
             `}
           >
-            <Icon icon='moon' style={iconStyle} />
+            {/* <Icon icon='moon' style={iconStyle} /> */}
             {props.data.site.siteMetadata.title}
           </h3>
         </Link>
