@@ -35,7 +35,7 @@ export const ColorScheme: ThemedColorSchemeType = {
   light: {
     danger: '#DE4D45',
     success: '#5EE89A',
-    main: 'black',
+    main: '#181818',
     inverted: 'white',
     background: '#FFFFFF',
     grey: '#888',
