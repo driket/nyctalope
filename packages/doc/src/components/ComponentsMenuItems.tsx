@@ -14,7 +14,7 @@ export const ComponentsMenuItems = (props) => {
   console.log(categorizedComponents)
   const topLevelStyle = {
     marginLeft: '26px',
-    fontSize: '12px',
+    fontSize: '11px',
     color: colors.grey,
     letterSpacing: '0.15em',
     fontFamily: fonts.heading,
@@ -38,7 +38,10 @@ export const ComponentsMenuItems = (props) => {
     (category) => category.name == 'layout',
   )
   const componentsPages = categorizedComponents.filter(
-    (category) => category.name == 'elements' || category.name == 'data-viz' || category.name == 'document',
+    (category) =>
+      category.name == 'elements' ||
+      category.name == 'data-viz' ||
+      category.name == 'document',
   )
   const experimentalPages = categorizedComponents.filter(
     (category) => category.name == 'experimental',
@@ -120,7 +123,7 @@ const MenuCategory = (props) => {
           text-transform: capitalize;
           margin-left: 0px;
           margin-bottom: 0px;
-          font-size: 14px;
+          font-size: 13px;
           color: ${colors.main};
         `}
       >
@@ -146,7 +149,7 @@ const MenuCategory = (props) => {
                 list-style: none;
                 margin: 0;
                 min-height: 20px;
-                display: flex;
+                /* display: flex; */
                 flex-direction: row;
                 align-items: center;
                 font-size: 13px;
