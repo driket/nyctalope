@@ -3,7 +3,7 @@ import Layout from '../components/Layout'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-mdx'
 import { useDarkMode } from '@nyctalope/react'
-import { Page } from '@nyctalope/react'
+import { WebView } from '@nyctalope/react'
 import { ColorScheme, Fonts, ThemeContext } from '@nyctalope/core'
 import { MDXProvider } from '@mdx-js/tag'
 import { Wrapper } from '../components/Wrapper'
@@ -20,14 +20,13 @@ export default ({ data: { mdx } }) => {
     code: Wrapper,
   }
 
-  console.log('ComponentPage - providedContext:', providedContext)
   return (
     <MDXProvider components={components}>
       <ThemeContext.Provider value={providedContext}>
         <Layout>
-          <Page>
+          <WebView>
             <MDXRenderer>{mdx.code.body}</MDXRenderer>
-          </Page>
+          </WebView>
         </Layout>
       </ThemeContext.Provider>
     </MDXProvider>

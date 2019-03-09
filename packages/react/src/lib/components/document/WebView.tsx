@@ -5,7 +5,7 @@ import { jsx, css } from '@emotion/core'
 import { transparentize } from 'polished'
 import { ThemeContext } from '@nyctalope/core'
 
-export const Page = (props) => {
+export const WebView = (props) => {
   const { colors, fonts } = useContext(ThemeContext)
   return (
     <div
@@ -70,4 +70,4 @@ export const Page = (props) => {
   )
 }
 
-export default Page
+export default WebView

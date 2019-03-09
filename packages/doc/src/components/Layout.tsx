@@ -3,7 +3,7 @@ import React, { useContext, useLayoutEffect } from 'react'
 import { jsx, css } from '@emotion/core'
 import { mix } from 'polished'
 import { Link, StaticQuery, graphql } from 'gatsby'
-import { Page, Stack, Icon } from '@nyctalope/react'
+import { Stack } from '@nyctalope/react'
 import ComponentsMenuItems from './ComponentsMenuItems'
 import { ThemeContext } from '@nyctalope/core'
 
