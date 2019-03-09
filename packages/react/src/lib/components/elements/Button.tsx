@@ -5,42 +5,39 @@ import React, {
   HTMLAttributes,
   SFC,
   RefObject,
-} from 'react'
+} from 'react';
 
-import { ThemeContext, ColorSchemeType } from '@nyctalope/core'
-import { Icon } from './Icon'
-import { Stack } from '../layout/Stack'
-import useHover from '../../hooks/use-hover'
-import { mix, transparentize } from 'polished'
+import { ThemeContext, ColorSchemeType } from '@nyctalope/core';
+import { Icon } from './Icon';
+import { Stack } from '../layout/Stack';
+import useHover from '../../hooks/use-hover';
+import { mix, transparentize } from 'polished';
 
-interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
-  handleClick?: MouseEventHandler
-  type?: 'default' | 'primary' | 'secondary' | 'danger' | 'ghost'
-  size?: 'xs' | 'sm' | 'md' | 'lg'
-  children?: any
-  icon?: string
-  direction: 'vertical' | 'horizontal'
-  style?: any
-  iconSpacing?: number
-}
+type ButtonProps = HTMLAttributes<HTMLButtonElement> & {
+  handleClick?: MouseEventHandler;
+  type: 'default' | 'primary' | 'secondary' | 'danger' | 'ghost';
+  size: 'xs' | 'sm' | 'md' | 'lg';
+  children?: any;
+  icon?: string;
+  direction: 'vertical' | 'horizontal';
+  style?: any;
+  iconSpacing?: number;
+};
 
 export const Button: SFC<ButtonProps> = (props: ButtonProps) => {
-  const [hoverRef, isHovered] = useHover()
-  const [active, setActive] = useState(false)
-  const { colors } = useContext(ThemeContext)
-  const { style = {} } = props
-  const { type = 'default' } = props
-  const { size = 'md' } = props
-  const { direction = 'horizontal' } = props
+  const [hoverRef, isHovered] = useHover();
+  const [active, setActive] = useState(false);
+  const { colors } = useContext(ThemeContext);
+  const { style, type, size, direction } = props;
   const combinedStyle = {
     ...baseButtonStyle(colors, isHovered, active),
     ...buttonStyleTypes(colors, isHovered, active)[type],
     ...buttonStyleSizes(direction)[size]['button'],
     ...style,
-  }
+  };
   const iconStyle = {
     ...buttonStyleSizes(direction)[size]['icon'],
-  }
+  };
   return (
     <button
       onMouseDownCapture={() => setActive(true)}
@@ -58,8 +55,15 @@ export const Button: SFC<ButtonProps> = (props: ButtonProps) => {
         {props.children && <span>{props.children}</span>}
       </Stack>
     </button>
-  )
-}
+  );
+};
+
+Button.defaultProps = {
+  type: 'default',
+  style: {},
+  size: 'md',
+  direction: 'horizontal',
+};
 
 const baseButtonStyle = (
   colors: ColorSchemeType,
@@ -97,15 +101,15 @@ const baseButtonStyle = (
     padding: '4px 12px',
 
     border: 'none',
-  }
-}
+  };
+};
 
 interface ButtonStyleTypesInterface {
-  default: object
-  primary: object
-  secondary: object
-  danger: object
-  ghost: object
+  default: object;
+  primary: object;
+  secondary: object;
+  danger: object;
+  ghost: object;
 }
 
 const buttonStyleTypes = (
@@ -144,20 +148,20 @@ const buttonStyleTypes = (
       color: isActive ? colors.highlight : colors.main,
       boxShadow: 'none',
     },
-  }
-}
+  };
+};
 
 type StyledItems = {
-  button: object
-  icon: object
-  gap: number
-}
+  button: object;
+  icon: object;
+  gap: number;
+};
 type ButtonStyleSizesInterface = {
-  xs: StyledItems
-  sm: StyledItems
-  md: StyledItems
-  lg: StyledItems
-}
+  xs: StyledItems;
+  sm: StyledItems;
+  md: StyledItems;
+  lg: StyledItems;
+};
 
 const buttonStyleSizes = (direction): ButtonStyleSizesInterface => {
   return {
@@ -209,7 +213,7 @@ const buttonStyleSizes = (direction): ButtonStyleSizesInterface => {
       },
       gap: direction == 'horizontal' ? 8 : 2,
     },
-  }
-}
+  };
+};
 
-export default Button
+export default Button;

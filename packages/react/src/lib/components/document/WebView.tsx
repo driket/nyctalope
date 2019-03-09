@@ -5,6 +5,10 @@ import { jsx, css } from '@emotion/core'
 import { transparentize } from 'polished'
 import { ThemeContext } from '@nyctalope/core'
 
+/**
+ * WebView
+ * @param props WebView props
+ */
 export const WebView = (props) => {
   const { colors, fonts } = useContext(ThemeContext)
   return (

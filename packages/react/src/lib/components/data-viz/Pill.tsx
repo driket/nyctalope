@@ -1,23 +1,23 @@
-import React, { useContext, SFC, CSSProperties } from 'react'
-import { ThemeContext } from '@nyctalope/core'
-import { PillStyle } from './Pill.style'
+import React, { useContext, SFC, CSSProperties } from 'react';
+import { ThemeContext } from '@nyctalope/core';
+import { PillStyle } from './Pill.style';
 
 export type PillProps = {
-  value: number
-  title: string
-  themedcolor: string
-  showLegend: boolean
-  size: string
-  style: CSSProperties
-  legendStyle: CSSProperties
-  children: any
-}
+  value: number;
+  title: string;
+  themedcolor: string;
+  showLegend: boolean;
+  size: string;
+  style: CSSProperties;
+  legendStyle: CSSProperties;
+  children: any;
+};
 
 export const Pill = (props: PillProps) => {
-  const { colors } = useContext(ThemeContext)
-  const { style = {} } = props
-  const { legendStyle = {} } = props
-  const totalSegmentsValue = sumSegmentsValue(props.children)
+  const { colors } = useContext(ThemeContext);
+  const { style = {} } = props;
+  const { legendStyle = {} } = props;
+  const totalSegmentsValue = sumSegmentsValue(props.children);
   return (
     <div {...props} style={{ width: '100%' }}>
       <div style={{ ...PillStyle.pillStyle, ...style }} {...props}>
@@ -43,42 +43,42 @@ export const Pill = (props: PillProps) => {
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
 type PillSegmentProps = {
-  value: number
-  title: string
-  themedColor: string
-  size: string
-  style: any
-}
+  value: number;
+  title: string;
+  themedColor: string;
+  size: string;
+  style: any;
+};
 
 export const PillSegment: SFC<PillSegmentProps> = (props: PillSegmentProps) => {
-  const { colors } = useContext(ThemeContext)
-  const { themedColor } = props || 'main'
-  const { size } = props || '33.33%'
-  const { style = {} } = props
-  const processedColor = colors[themedColor]
+  const { colors } = useContext(ThemeContext);
+  const { themedColor } = props || 'main';
+  const { size } = props || '33.33%';
+  const { style = {} } = props;
+  const processedColor = colors[themedColor];
   return (
     <div
       {...props}
       style={{ ...PillStyle.pillSegmentStyle(size, processedColor), ...style }}
     />
-  )
-}
+  );
+};
 
 const sumSegmentsValue = (segments): number => {
   return React.Children.toArray(segments).reduce(
     (previousValue, currentValue) => {
       if (typeof currentValue === 'object') {
-        return previousValue + currentValue.props.value
+        return previousValue + currentValue.props.value;
       } else {
-        return previousValue
+        return previousValue;
       }
     },
     0,
-  )
-}
+  );
+};
 
-export default Pill
+export default Pill;

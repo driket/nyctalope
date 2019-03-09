@@ -1,33 +1,36 @@
 /** @jsx jsx */
 //eslint-disable import/first
-import React from 'react'
-import { jsx, css } from '@emotion/core'
+import React from 'react';
+import { jsx, css } from '@emotion/core';
 
 type StackType = {
-  children?: any
+  children?: any;
   distribute?:
     | 'start'
     | 'end'
     | 'center'
     | 'space-between'
     | 'space-around'
-    | 'space-evenly'
-  alignItems?: 'start' | 'center' | 'end' | 'stretch'
-  direction: 'horizontal' | 'vertical'
-  reverse?: boolean
-  style?: any
-  gap?: number
-}
+    | 'space-evenly';
+  alignItems?: 'start' | 'center' | 'end' | 'stretch';
+  direction: 'horizontal' | 'vertical';
+  reverse?: boolean;
+  style?: any;
+  gap?: number;
+};
 
 export const Stack = (props: StackType) => {
-  const { direction = 'horizontal' } = props
-  const { reverse = false } = props
-  const { style = {}} = props
-  const { distribute = 'start' } = props
-  const { alignItems = 'center' } = props
-  const { gap = 10 } = props
+  const { direction = 'horizontal' } = props;
+  const { reverse = false } = props;
+  const { style = {} } = props;
+  const { distribute = 'start' } = props;
+  const { alignItems = 'center' } = props;
+  const { gap = 10 } = props;
   return (
-    <div css={stackStyle(direction, reverse, distribute, alignItems, gap)} style={style}>
+    <div
+      css={stackStyle(direction, reverse, distribute, alignItems, gap)}
+      style={style}
+    >
       {props.children}
       {/* <span>direction={direction}</span>
       <span>flexDirection={getFlexDirection(direction, reverse)}</span>
@@ -36,8 +39,8 @@ export const Stack = (props: StackType) => {
       <span>flexDistribution={getFlexDistribution(distribute)}</span>
       <span>gap={gap}</span> */}
     </div>
-  )
-}
+  );
+};
 
 const stackStyle = (
   direction: string,
@@ -47,9 +50,9 @@ const stackStyle = (
   gap: number,
 ) => {
   const margin =
-    direction == 'vertical' ? `margin-top:${gap}px` : `margin-left:${gap}px`
+    direction == 'vertical' ? `margin-top:${gap}px` : `margin-left:${gap}px`;
   const shouldRenderGap =
-    distribute == 'start' || distribute == 'end' || distribute == 'center'
+    distribute == 'start' || distribute == 'end' || distribute == 'center';
   return css`
     /* allow padding */
     box-sizing: border-box;
@@ -68,22 +71,22 @@ const stackStyle = (
         ${shouldRenderGap ? margin : ''};
       }
     }
-  `
-}
+  `;
+};
 
 function getFlexDirection(direction: string, reverse: boolean): string {
-  const flexDirection = direction == 'horizontal' ? 'row' : 'column'
+  const flexDirection = direction == 'horizontal' ? 'row' : 'column';
   const flexDirectionWithReverse =
-    reverse == false ? flexDirection : `${flexDirection}-reverse`
-  return flexDirectionWithReverse
+    reverse == false ? flexDirection : `${flexDirection}-reverse`;
+  return flexDirectionWithReverse;
 }
 
 function getFlexDistribution(distribute: string) {
   const flexDistribution =
     distribute == 'start' || distribute == 'end'
       ? `flex-${distribute}`
-      : distribute
-  return flexDistribution
+      : distribute;
+  return flexDistribution;
 }
 
-export default Stack
+export default Stack;
