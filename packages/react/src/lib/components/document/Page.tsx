@@ -29,8 +29,8 @@ export const Page = (props) => {
         p {
           color: ${transparentize(0.4, colors.main)};
           white-space: initial;
-          font-size: 13px;
-          line-height: 18px;
+          font-size: 14px;
+          line-height: 19px;
           /* letter-spacing: 1px; */
         }
         table {

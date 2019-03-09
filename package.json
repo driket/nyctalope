@@ -11,6 +11,7 @@
   },
   "scripts": {
     "build:publish": "yarn build && lerna publish",
+    "serve": "cd packages/doc && serve public",
     "develop": "lerna run --parallel develop",
     "build": "lerna clean -y && lerna run build && lerna bootstrap"
   },
