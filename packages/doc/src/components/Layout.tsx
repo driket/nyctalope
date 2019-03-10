@@ -1,18 +1,18 @@
 /** @jsx jsx */
-import React, { useContext, useLayoutEffect } from 'react'
-import { jsx, css } from '@emotion/core'
-import { mix } from 'polished'
-import { Link, StaticQuery, graphql } from 'gatsby'
-import { Stack } from '@nyctalope/react'
-import ComponentsMenuItems from './ComponentsMenuItems'
-import { ThemeContext } from '@nyctalope/core'
+import React, { useContext, useLayoutEffect } from 'react';
+import { jsx, css } from '@emotion/core';
+import { mix } from 'polished';
+import { Link, StaticQuery, graphql } from 'gatsby';
+import { Stack } from '@nyctalope/react';
+import ComponentsMenuItems from './ComponentsMenuItems';
+import { ThemeContext } from '@nyctalope/core';
 
 export const Layout = (props) => {
-  const { colors } = useContext(ThemeContext)
+  const { colors } = useContext(ThemeContext);
   // update document background when colors are changing in context
   useLayoutEffect(() => {
-    document.body.style.backgroundColor = colors.background
-  }, [colors])
+    document.body.style.backgroundColor = colors.background;
+  }, [colors]);
   return (
     <Stack
       distribute='space-between'
@@ -25,11 +25,11 @@ export const Layout = (props) => {
       <LeftPanel {...props} />
       <MainView {...props} />
     </Stack>
-  )
-}
+  );
+};
 
 const MainView = (props) => {
-  const { colors, fonts } = useContext(ThemeContext)
+  const { colors, fonts } = useContext(ThemeContext);
   return (
     <div
       css={css`
@@ -68,19 +68,22 @@ const MainView = (props) => {
       </Link>
       {props.children}
     </div>
-  )
-}
+  );
+};
 
 const LeftPanel = (props) => {
-  const components = props.data.allMdx.edges
-  const { prefersColorScheme, colors, fonts } = useContext(ThemeContext)
+  // filter mdx -> only files
+  const components = props.data.allMdx.edges.filter(
+    (mdx) => mdx.node.parent.__typename == 'File',
+  );
+  const { prefersColorScheme, colors, fonts } = useContext(ThemeContext);
   const iconStyle = {
     width: '16px',
     height: '16px',
     paddingRight: '5px',
     position: 'relative',
     top: '1px',
-  }
+  };
   return (
     <div
       css={css`
@@ -89,8 +92,6 @@ const LeftPanel = (props) => {
         display: flex;
         margin: 0;
         padding: 0;
-        /* overflow-y: scroll; */
-        /* height: 100%; */
       `}
     >
       <div
@@ -135,8 +136,8 @@ const LeftPanel = (props) => {
         <ComponentsMenuItems components={components} />
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default (props) => {
   return (
@@ -162,6 +163,9 @@ export default (props) => {
                 fields {
                   slug
                 }
+                parent {
+                  __typename
+                }
               }
             }
           }
@@ -169,5 +173,5 @@ export default (props) => {
       `}
       render={(data) => <Layout {...props} data={data} />}
     />
-  )
-}
+  );
+};

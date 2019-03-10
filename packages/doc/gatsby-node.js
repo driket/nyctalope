@@ -1,23 +1,31 @@
-const { createFilePath } = require(`gatsby-source-filesystem`)
-const path = require(`path`)
+const { createFilePath } = require(`gatsby-source-filesystem`);
+const path = require(`path`);
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
-  const { createNodeField } = actions
+  const { createNodeField } = actions;
   //   console.log('node', node)
   if (node.internal.type === `Mdx`) {
-    const slug = createFilePath({ node, getNode, basePath: `lib/components` })
+    const slug = createFilePath({ node, getNode, basePath: `lib/components` });
     createNodeField({
       node,
       name: `slug`,
       value: slug,
-    })
+    });
   }
-}
+  if (node.internal.type === `ComponentMetadata`) {
+    const slug = createFilePath({ node, getNode, basePath: `lib/components` });
+    createNodeField({
+      node,
+      name: `slug`,
+      value: slug,
+    });
+  }
+};
 
 exports.createPages = ({ graphql, actions }) => {
   // **Note:** The graphql function call returns a Promise
   // see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise for more info
-  const { createPage } = actions
+  const { createPage } = actions;
   return graphql(`
     {
       allMdx {
@@ -26,13 +34,19 @@ exports.createPages = ({ graphql, actions }) => {
             fields {
               slug
             }
+            parent {
+              __typename
+            }
           }
         }
       }
     }
   `).then((result) => {
     result.data.allMdx.edges.forEach(({ node }) => {
-      console.log('create page for', node.fields.slug)
+      if (node.parent.__typename != 'File') {
+        return;
+      }
+      console.log('create page for', node.fields.slug);
       createPage({
         path: node.fields.slug,
         component: path.resolve(`./src/templates/component-page.js`),
@@ -41,10 +55,10 @@ exports.createPages = ({ graphql, actions }) => {
           // in page queries as GraphQL variables.
           slug: node.fields.slug,
         },
-      })
-    })
-  })
-}
+      });
+    });
+  });
+};
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
@@ -54,8 +68,8 @@ exports.onCreateWebpackConfig = ({ actions }) => {
       net: 'empty',
       tls: 'empty',
     },
-  })
-}
+  });
+};
 
 // exports.onCreateWebPackConfig = ({ actions, loader, getConfig}) => {
 //     // externals: ['tls', 'net', 'fs'],

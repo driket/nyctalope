@@ -1,16 +1,19 @@
 /** @jsx jsx */
 /* eslint-disable import/first */
-import React, { useContext } from 'react'
-import { jsx, css } from '@emotion/core'
-import { transparentize } from 'polished'
-import { ThemeContext } from '@nyctalope/core'
+import React, { useContext, SFC } from 'react';
+import { jsx, css } from '@emotion/core';
+import { transparentize } from 'polished';
+import { ThemeContext } from '@nyctalope/core';
 
+type WebViewProps = {
+  children: any;
+};
 /**
  * WebView
  * @param props WebView props
  */
-export const WebView = (props) => {
-  const { colors, fonts } = useContext(ThemeContext)
+export const WebView: SFC<WebViewProps> = (props: WebViewProps) => {
+  const { colors, fonts } = useContext(ThemeContext);
   return (
     <div
       css={css`
@@ -39,6 +42,7 @@ export const WebView = (props) => {
         }
         table {
           width: 100%;
+          font-size: 13px;
         }
         table > thead > th {
           border-bottom: 1px solid ${colors.lighterGrey};
@@ -71,7 +75,7 @@ export const WebView = (props) => {
     >
       {props.children}
     </div>
-  )
-}
+  );
+};
 
-export default WebView
+export default WebView;

@@ -25,10 +25,11 @@
     "test": "echo \"Error: run tests from root\" && exit 1",
     "build:doc": "gatsby build",
     "build": "rm -rf dist && tsc",
-    "develop:clean": "rm -rf .cache && DEBUG=gatsby:query-watcher gatsby develop",
-    "develop": "concurrently \"yarn develop:clean\" \"yarn develop:sync-react-components\" \"yarn develop:sync-core\"",
-    "develop:sync-react-components": "sync-files --watch ../react/dist/src node_modules/@nyctalope/react/dist/src",
-    "develop:sync-core": "sync-files --watch ../core/dist/src node_modules/@nyctalope/core/dist/src"
+    "develop": "concurrently \"yarn develop:run\"",
+    "develop:run": "rm -rf .cache && DEBUG=gatsby:query-watcher gatsby develop",
+    "develop:sync": "concurrently \"yarn develop:run\" \"yarn develop:sync:react-components\" \"yarn develop:sync:core\"",
+    "develop:sync:react-components": "sync-files --watch ../react/dist/src node_modules/@nyctalope/react/dist/src",
+    "develop:sync:core": "sync-files --watch ../core/dist/src node_modules/@nyctalope/core/dist/src"
   },
   "gitHead": "35f981a817fa52a69341c1ea7440baadab889779",
   "dependencies": {

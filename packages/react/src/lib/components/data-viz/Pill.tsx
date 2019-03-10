@@ -6,17 +6,15 @@ export type PillProps = {
   value: number;
   title: string;
   themedcolor: string;
-  showLegend: boolean;
-  size: string;
+  showLegend?: boolean;
   style: CSSProperties;
   legendStyle: CSSProperties;
   children: any;
 };
 
-export const Pill = (props: PillProps) => {
+export const Pill: SFC<PillProps> = (props: PillProps) => {
   const { colors } = useContext(ThemeContext);
-  const { style = {} } = props;
-  const { legendStyle = {} } = props;
+  const { style, legendStyle } = props;
   const totalSegmentsValue = sumSegmentsValue(props.children);
   return (
     <div {...props} style={{ width: '100%' }}>
@@ -44,6 +42,12 @@ export const Pill = (props: PillProps) => {
       )}
     </div>
   );
+};
+
+Pill.defaultProps = {
+  legendStyle: {},
+  style: {},
+  showLegend: false,
 };
 
 type PillSegmentProps = {

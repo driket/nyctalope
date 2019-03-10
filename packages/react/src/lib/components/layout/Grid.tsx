@@ -1,11 +1,11 @@
-import React, { Component, ReactChildren } from 'react';
+import React, { SFC, Component, ReactChildren } from 'react';
 import { ScreenSizes, ScreenSizesType } from '@nyctalope/core';
 import { useMedia } from '../../hooks/use-media';
 
 /**
  * Grid properties
  */
-interface GridProps {
+type GridProps = {
   /* Number of columns */
   numCol: number;
   /* Number of columns displayed on a XS sized screen.*/
@@ -27,16 +27,16 @@ interface GridProps {
   /* Custom style */
   style: any;
   /* Gap between columns */
-  gridGap?: string;
-}
+  gridGap: string;
+};
 
 /**
  * Grid component
  * @param props GridProps
  */
-export const Grid = (props: GridProps) => {
+export const Grid: SFC<GridProps> = (props: GridProps) => {
   const numColForSizes = getNumColForScreenSizes(props);
-  const { gridGap = '10px' } = props;
+  const { gridGap } = props;
   const propStyle = props.style || {};
   const columns = React.Children.toArray(props.children);
 
@@ -80,6 +80,11 @@ export const Grid = (props: GridProps) => {
       })}
     </div>
   );
+};
+
+Grid.defaultProps = {
+  gridGap: '10px',
+  style: {},
 };
 
 const baseGridStyle = (gridGap: string): any => ({
