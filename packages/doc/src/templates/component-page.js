@@ -7,6 +7,8 @@ import { WebView } from '@nyctalope/react';
 import { ColorScheme, Fonts, ThemeContext } from '@nyctalope/core';
 import { MDXProvider } from '@mdx-js/tag';
 import { Wrapper, DocGen } from '../components';
+import * as NyctalopeComponents from '@nyctalope/react';
+import * as NyctalopeDocComponents from '../components';
 
 export default ({ data: { mdx, componentMetadata } }) => {
   const prefersColorScheme = useDarkMode() ? 'dark' : 'light';
@@ -25,7 +27,10 @@ export default ({ data: { mdx, componentMetadata } }) => {
       <ThemeContext.Provider value={providedContext}>
         <Layout>
           <WebView>
-            <MDXRenderer componentMetadata={componentMetadata}>
+            <MDXRenderer
+              scope={{ ...NyctalopeComponents, ...NyctalopeDocComponents }}
+              componentMetadata={componentMetadata}
+            >
               {mdx.code.body}
             </MDXRenderer>
           </WebView>
