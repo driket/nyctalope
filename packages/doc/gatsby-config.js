@@ -21,7 +21,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`Comfortaa\:400,700`],
+        fonts: [`Comfortaa\:300,400,700`],
       },
     },
     `gatsby-mdx`,
