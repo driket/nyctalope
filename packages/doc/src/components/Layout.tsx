@@ -126,11 +126,12 @@ const LeftPanel = (props) => {
               font-size: 16px;
               color: ${colors.grey};
               margin-left: 20px;
-              font-weight: 400;
+              font-weight: 700;
             `}
           >
             {/* <Icon icon='moon' style={iconStyle} /> */}
             {props.data.site.siteMetadata.title}
+            <span style={{ fontWeight: 100 }}> XP</span>
           </h3>
         </Link>
         <ComponentsMenuItems components={components} />
