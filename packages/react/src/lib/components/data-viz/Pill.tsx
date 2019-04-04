@@ -86,3 +86,4 @@ const sumSegmentsValue = (segments): number => {
 };
 
 export default Pill;
+export { PillStyle };
